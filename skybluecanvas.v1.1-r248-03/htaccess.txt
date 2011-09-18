@@ -1,0 +1,54 @@
+# The rules below are what enable the pretty URLs
+#
+#     Example: www.mysite.com/my-pretty-url
+#
+# These rules require that you have mod_rewrite installed and enabled 
+# in your Apache web server, and that directory-level over-rides be enabled.
+# Follow these instructions to enable both:
+#
+# 1. Find your Apache config file (httpd.conf) in /etc/httpd/ (Linux only)
+# 2. Make a backup of this file (in case you make a mistake)
+# 3. Find the line that reads 'LoadModule rewrite_module modules/mod_rewrite.so'
+# 4. If there is a # sign in front of this line, it means it is disabled. Delete the # sign and save the file.
+#   
+#  Enable directory-level over-rides
+#  
+# 1. In the same httpd.conf file, find the section that looks something like this:
+#    
+# 	<Directory "/var/www/">
+# 		Options Indexes FollowSymLinks MultiViews
+# 		AllowOverride All <-- Make sure this is set to 'All'
+# 		Order allow,deny
+# 		Allow from all
+# 	</Directory>
+# 	
+# 2. Make sure the AllowOverride option is set to "All".
+# 3. Save the file
+# 4. Restart Apache. On most Linux/Unix servers you open a command shell and type 'apachectl restart'
+
+RewriteEngine on
+
+# For most installations, the RewriteRules below should work fine.
+# However, in some cases, you may experience behavior where the home 
+# page is displayed no matter which link you click. If this is the behavior
+# you are experiencing, try removing the '#' before the next line:
+
+# RewriteBase /
+
+ErrorDocument 404    404-page-not-found
+
+RewriteRule xml/(.*)\.xml$       index.php?route=404-page-not-found
+RewriteRule email/(.*)$          index.php?route=404-page-not-found
+RewriteRule ads/(.*)$            index.php?route=404-page-not-found
+RewriteRule gadgets/(.*)$        index.php?route=404-page-not-found
+RewriteRule metrics/(.*)$        index.php?route=404-page-not-found
+RewriteRule modules/(.*)$        index.php?route=404-page-not-found
+RewriteRule data/plugins/(.*)$   index.php?route=404-page-not-found
+RewriteRule tmp/(.*)$            index.php?route=404-page-not-found
+RewriteRule stories/(.*)$        index.php?route=404-page-not-found
+# RewriteRule (.*)data/(.*)$       data/$2
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ index.php?route=$1 [L,QSA]

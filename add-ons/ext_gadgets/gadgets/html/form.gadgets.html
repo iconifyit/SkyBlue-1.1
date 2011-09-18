@@ -1,0 +1,32 @@
+<input type="hidden" 
+       name="id" 
+       value="{OBJ:ID}" 
+       />
+<tr>
+	<td width="12%">
+		<label for="name" class="strong">Name:</label>
+	</td>
+	<td width="37%">
+		<input type="text" name="name" value="{OBJ:NAME}" />
+	</td>
+	<td width="12%">
+		<label for="name" class="strong">Token:</label>
+	</td>
+	<td width="37%">
+		{OBJ:ZONE}
+	</td>
+</tr>
+<tr>
+    <th colspan="4" valign="top" style="font-weight: bold; color: #000; font-size: 11px;">
+        Code: <span style="font-weight: normal;">Paste gadget code below</span>
+    </th>
+</tr>
+<tr>
+    <td colspan="4">
+        <textarea id="content" 
+                  name="content" 
+                  cols="100" 
+                  rows="10" 
+                  style="margin: 4px 0px 1px 0px; padding: 4px; background: #FFF; width: 99%">{OBJ:CONTENT}</textarea>
+    </td>
+</tr>

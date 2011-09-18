@@ -1,0 +1,12 @@
+<p>
+August 1, 2008 marks an exciting milestone for SkyBlueCanvas. As of today, SkyBlueCanvas has surpassed 5,000 downloads. This is an exciting milestone especially since SkyBlueCanvas was only officially released on March 28 of this year. The software is downloaded an average of every 36 minutes. The timing of reaching this milestone is a great time to share some more exciting news.
+</p>
+<p>
+I am happy to introduce you all to Todd Crowe and Steve Fister. Todd and Steve are the newest members of the SkyBlueCanvas development team. Each has over 15 years of experience in software development and will be applying the fruits of that experience to SkyBlueCanvas. You can read more about Todd and Steve on the <a href="http://blog.skybluecanvas.com/topics/skybluecanvas-lightweight-cms/">blog</a>.
+</p>
+<p>
+Next, we will be releasing version 1.0.4 of SkyBlueCanvas within the next few days. This is a minor version release that will fix a few bugs in the WYMeditor XHTML Editor and to some of the managers. This version will also include a few new minor features.
+</p>
+<p>
+The development team is also working on SkyBlueCanvas v1.1, which is tentatively scheduled to be released November 1, 2008. Version 1.1 will be a fairly significant upgrade to SBC with improved usability, several new features and an improved development API. Version 1.1 will also include WYMeditor v0.5 (the current release).
+</p>

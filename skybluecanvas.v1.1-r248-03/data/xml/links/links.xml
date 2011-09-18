@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+<obj type="links">
+<item id="1"
+      url="http://www.skybluecanvas.com"
+      groups="1"
+      objtype="links"
+      name="SkyBlueCanvas">
+</item>
+
+<item id="2"
+      url="http://www.test.com"
+      groups="2"
+      objtype="links"
+      name="Test Save Link">
+</item>
+
+<item id="5"
+      url="http://www.foobar.com"
+      groups="1,2"
+      objtype="links"
+      name="Test New Link">
+</item>
+
+<item id="6"
+      url="http://www.theboxcreative.com"
+      groups="2"
+      objtype="links"
+      name="The Box Creative">
+</item>
+
+
+</obj>
+</root>

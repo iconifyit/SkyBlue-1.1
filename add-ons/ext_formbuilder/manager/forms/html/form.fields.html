@@ -1,0 +1,114 @@
+<link rel="stylesheet" type="text/css" href="managers/forms/css/forms.css" />
+<script type="text/javascript" src="managers/forms/js/forms.js"></script>
+<input type="hidden" name="id" value="{OBJ:ID}" />
+<input type="hidden" name="formid" value="{OBJ:FORMID}" />
+<input type="hidden" name="objtype" value="{OBJ:OBJTYPE}" />
+<input type="hidden" name="button_onclick_id" value="{OBJ:BUTTON_ONCLICK_ID}" />
+<input type="hidden" name="button_callback_file" value="{OBJ:BUTTON_CALLBACK_FILE}" />
+<tr><td colspan="2">
+    <div>
+		<p><a href="#form" class="scrollTo">Form Name</a> | 
+		   <a href="#name" class="scrollTo">Name</a> | 
+		   <a href="#label" class="scrollTo">Label</a> | 
+		   <a href="#type" class="scrollTo">Field Type</a> | 
+		   <a href="#validation" class="scrollTo">Validation</a> | 
+		   <a href="#cssclass" class="scrollTo">CSS Class</a> | 
+		   <a href="#order" class="scrollTo">Field Order</a>
+		</p>
+        <fieldset id="form">
+            <label>Form: <a href="#container" class="scrollTo">Top</a></label>
+            {OBJ:FORM}
+        </fieldset>
+        <fieldset id="name">
+            <label>Name: <a href="#container" class="scrollTo">Top</a></label>
+            <input type="text" name="title" value="{OBJ:TITLE}" size="45" />
+        </fieldset>
+        <fieldset id="label">
+            <label>Label: <span class="normal">(Maximum 255 characters including spaces and puncutation.)</span> <a href="#container" class="scrollTo">Top</a></label>
+            <textarea name="label" cols="43" rows="3">{OBJ:LABEL}</textarea>
+        </fieldset>
+        <div id="options"></div>
+        <fieldset id="type">
+            <label>Field Type: <a href="#container" class="scrollTo">Top</a></label>
+            {OBJ:FIELDTYPE}
+            <fieldset class="options select">
+                <label>Size:</label>
+                <input type="text" name="size" value="{OBJ:SIZE}" class="inputbox" size="4" />
+            </fieldset>
+            <fieldset class="options select">
+                <label>Allow Multiple Selections?</label>
+                {OBJ:MULTI_SELECT}
+            </fieldset>
+            <fieldset class="options radio checkbox select">
+                <label>Options:</label>
+                <p>
+                    Enter the options (repsonses) separate by a semi-colon (;). Separate the 
+                    "value" and "text" of the field by a colon like this:<br /><br />
+                    "field_value1:Display Text 1; fieldvalue2:Display Text 2;"
+                </p>
+                <textarea name="options" cols="50" rows="6">{OBJ:OPTIONS}</textarea>
+            </fieldset>
+            <fieldset class="options file">
+                <label>Allow these file types (leave blank to accept any file type)</label>
+                <textarea name="file_types" cols="50" rows="6">{OBJ:FILE_TYPES}</textarea>
+            </fieldset>
+            <fieldset class="options password">
+                <label>Password Requirements</label>
+                <fieldset>
+                    <label>Minimum Password Length (defaults to 8 if left blank)</label>
+                    <input type="text" name="pass_length" value="{OBJ:PASS_LENGTH}" class="inputbox" size="4" />
+                </fieldset>
+                <fieldset>
+                    <label>Require A Digit</label>
+                    {OBJ:PASS_DIGIT}
+                </fieldset>
+                <fieldset>
+                    <label>Require An Upper Case Letter</label>
+                    {OBJ:PASS_UCCHAR}
+                </fieldset>
+                <fieldset>
+                    <label>Require On of These Special Characters</label>
+                    <input type="text" name="pass_chars" value="{OBJ:PASS_CHARS}" class="inputbox" size="32" />
+                </fieldset>
+            </fieldset>
+            <fieldset class="options button">
+                <label>JavaScript Click Callback</label>
+                <textarea name="button_onclick" cols="50" rows="6">{OBJ:BUTTON_ONCLICK}</textarea>
+            </fieldset>
+            <fieldset class="options textarea">
+                <label>Columns X Rows</label>
+                <input type="text" name="cols" value="{OBJ:COLS}" class="inputbox" size="4" />&nbsp;Columns
+                <input type="text" name="rows" value="{OBJ:ROWS}" class="inputbox" size="4" />&nbsp;Rows
+            </fieldset>
+        </fieldset>
+        <fieldset class="validations_block" id="validation">
+            <label>Field Data Validation: <a href="#container" class="scrollTo">Top</a></label>
+            <!-- notempty, number, email, url -->
+            {OBJ:VALIDATION}
+            <fieldset class="validations minlength">
+                <label>Minimum Length</label>
+                <input type="text" name="minlength" value="{OBJ:MINLENGTH}" />
+            </fieldset>
+            <fieldset class="validations maxlength">
+                <label>Maximum Length</label>
+                <input type="text" name="maxlength" value="{OBJ:MAXLENGTH}" />
+            </fieldset>
+            <fieldset class="validations regex">
+                <label>Regular Expression</label>
+                <textarea name="regex" cols="50" rows="3">{OBJ:REGEX}</textarea>
+            </fieldset>
+            <fieldset id="validation_error_message">
+                <label>Validation Error Message:</label>
+                <textarea name="validation_error_message" rows="3" cols="50">{OBJ:VALIDATION_ERROR_MESSAGE}</textarea>
+            </fieldset>
+        </fieldset>
+        <fieldset id="cssclass">
+            <label>CSS Class: <a href="#container" class="scrollTo">Top</a></label>
+            <input type="text" name="class" value="{OBJ:CLASS}" size="45" />
+        </fieldset>
+        <fieldset id="order">
+            <label>Field Order: <a href="#container" class="scrollTo">Top</a></label>
+            {OBJ:ORDER}
+        </fieldset>
+    </div>
+</td></tr>

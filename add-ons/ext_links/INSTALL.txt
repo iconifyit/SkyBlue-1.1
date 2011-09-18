@@ -1,0 +1,5 @@
+Installation Instructions:
+
+- Copy /ext_links/manager/links to /your_skyblue_root/managers/
+- Copy /ext_links/module/mod.links.php to /your_skyblue_root/data/modules/
+- Make sure all file permissons are set to 775

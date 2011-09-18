@@ -1,0 +1,16 @@
+<?php 
+    global $Router; 
+    global $Filter;
+?>
+<div class="horizontal-menu">
+    <?php if (count($data)) : ?>
+    <ul>
+        <?php foreach ($data as $item) : ?>
+        <?php if (not_valid_menu($item)) continue; ?>
+        <li<?php the_class($item); ?>>
+            <a href="<?php the_link($item); ?>"><span class="linktext"><?php the_text($item); ?></span></a>
+        </li>
+        <?php endforeach; ?>
+    </ul>
+    <?php endif; ?>
+</div>

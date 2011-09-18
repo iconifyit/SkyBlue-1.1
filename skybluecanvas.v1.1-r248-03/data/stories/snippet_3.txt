@@ -1,0 +1,1 @@
+<p>This is snippet_3 (a.k.a. test_snippet)</p>

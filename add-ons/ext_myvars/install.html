@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  lang="en-us">
+    <head>
+        <title>FormBuilder Installation</title>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" /> 
+        <style type="text/css">
+            body {padding: 15px 80px;}
+            pre {padding: 15px; border: 1px solid #DDD; background: #EEE; font-family: monospace, courier;}
+            * {font-family: Verdana, arial, sans-serif; font-size: 12px;}
+            h1 {font-size: 1.5em;}
+            ol {padding: 0px 0px 0px 20px;}
+            ol li ul {list-style: lower-alpha; padding: 0px 0px 0px 20px;}
+            ol li ul li {padding: 3px 0px;}
+        </style>
+    </head>
+    <body>
+        <h1>MyVars Extension Installation</h1>
+        
+        <h2>System Requirements</h2>
+        <ul>
+        	<li>SkyBlueCanvas v1.1</li>
+        	<li>PHP 4 or above</li>
+        	<li>Apache Web Server</li>
+        </ul>
+        
+        <h2>Installation Instructions</h2>
+        
+        <ol>
+        	<li>Log into the <strong>Admin</strong> section of your SkyBlueCanvas site at <u>www.yoursite.com/admin.php</u>.</li>
+        	<li>Navigate to <strong>Admin &gt; Collections &gt; Installer</strong>.</li>
+			<li>
+				<ul>
+					<li>Click on the <strong>Managers</strong> tab.</li>
+					<li>Click the button labeled <strong>New</strong> in the upper-right corner of the admin page.</li>
+					<li>Click the button labeled <strong>Browse</strong>.</li>
+					<li>Using the file browser that appears, locate the MyVars Manager ZIP file in <u>ext_myvars/packages/manager/myvars.zip</u>.</li>
+					<li>Click the button labeled <strong>Install</strong>.</li>
+				</ul>
+			</li>
+			<li>
+				<ul>
+					<li>Locate the MyVars Plugin file in <u>ext_myvars/source/plugin/plugin.variables.zip</u>.</li>
+					<li>Open the MyVars Plugin file in a text editor and copy the code.</li>
+					<li>Go to <strong>Admin &gt; Collections &gt; Plugins</strong></li>
+					<li>Click the button labeled <strong>Add</strong> in the upper-right corner of the admin page.</li>
+					<li>Paste the plugin code you copied into the textarea on the form.</li>
+					<li>Name the plugin <strong>plugin.variables.php</strong>.</li>
+					<li>Click the button labeled <strong>Save</strong>.</li>
+				</ul>
+			</li>
+        </ol>
+        
+        <h2>About MyVars</h2>
+        <p>
+        The new MyVars extension allows you to create custom search variables/tokens that will be replaced with the values you specify 
+        when your web page is rendered in the browser. This feature can be helpful when you want to be able to easily change 
+        bits of informatin such as phone numbers, emails, web page URLs or image paths. You set the value once, and it is displayed 
+        anywhere in your site you choose. If the value changes, you only make the change in one place.
+        </p>
+        
+        <h2>How It Works</h2>
+        <p>
+        Let's say you have your phone number littered throughout your web site. If your phone number ever changes, you would normally 
+        have to find and change every instance of the phone number on your site. With the MyVars extension and plugin, you can 
+        set your phone number in one place, and use a simple string replacement token to have the phone number automatically update 
+        immediately throughout your site.
+        </p>
+        <p>
+        MyVars has three possible variable types:
+        </p>
+        <ol>
+        	<li><strong>Variables</strong>
+				<p>
+				Variables are single word tokens that you can use anywhere in your page text, template HTML or even field inputs 
+				such as page titles, menu text or link text. The tokens are formatted as <strong>[[search_value]]</strong>. For instance, 
+				if you create a <strong>phone_number</strong> variable, you simply insert the <strong>[[phone_number]]</strong> token 
+				anywhere on your site, and the <strong>MyVars Plugin</strong> will automatically replace the token with the value you enter in the 
+				<strong>MyVars Manager</strong>.
+				</p>
+				<h3>Example:</h2>
+				<p>Let's say you create a variable with the search value <strong>phone_number</strong> and give it the replacement value <strong>(555) 555-1234</strong>.</p>
+				<p>In your page text, you enter:<br /><br />
+					<em>For more information, please contact us at <strong>[[phone_number]]</strong></em>.
+				</p>
+				<p>Your page will appear as:<br /><br />
+				    <em>For more information, please contact us at <strong>(555) 555-1234</strong></em>.
+				</p>
+        	</li>
+        	<li><strong>Strings</strong>
+				<p>
+				Strings are any string of text, of any length that you want to replace throughout your site. For instance, let's say the name of your company 
+				changes from Acme Industries, LLC to Acme Global Industries, Inc. Rather than search throughout your entire site for every 
+				instance of the old name, you can create a string search value in <strong>MyVars Managers</strong> where the old name is the 
+				<strong>name</strong> of the variable, and the new name is the <strong>Replacement Values</strong>. When your pages are rendered,
+				the old name will be automatically replaced with the new value.
+				</p>
+				<h3>Example:</h2>
+				<p>Let's say you create a string search value <strong>Acme Industries, LLC</strong> and specify the replacement value <strong>Acme Global Industries, Inc.</strong>.</p>
+				<p>Your original page text contains:<br /><br />
+					<em>Welcome to <strong>Acme Industries, LLC</strong>...</em>.
+				</p>
+				<p>Your page will appear as:<br /><br />
+				    <em>Welcome to <strong>Acme Global Industries, Inc.</strong>...</em>.
+				</p>
+        	</li>
+        	<li><strong>Regular Expressions (Advanced Users)</strong>
+				<p>
+				Regular Expressions is a pattern matching language to allow you to match patterns or letters and/or numbers. MyVars allows 
+				you to specify a Regular Expression as a variable name to be replaced with the value you choose. 
+				For instance, if you want to add an area code to all instances of your phone number on your web site, you can specify 
+				<strong>/[0-9]{3}-[0-9]{4}/</strong> as the search value, enter <strong>(555) $0</strong> as the replacement value, and 
+				MyVars will automatically add the area code to each matching phone number.
+				</p>
+				<h3>Example:</h2>
+				<p>Let's say you create a Regular Expression search value <strong>/[0-9]{3}-[0-9]{4}/</strong> and give it the 
+				replacement value <strong>+1 (555) $0</strong>.</p>
+				<p>Your original page text contains:<br /><br />
+					<em>Please contact us today at <strong>555-1234</strong>...</em>.
+				</p>
+				<p>Your page will appear as:<br /><br />
+					<em>Please contact us today at <strong>+1 (555) 555-1234</strong>...</em>.
+				</p>
+        	</li>
+        </ol>
+        
+    </body>
+</html>

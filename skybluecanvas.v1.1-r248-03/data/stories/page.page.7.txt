@@ -1,0 +1,37 @@
+<div id="text">
+                  <h2>Why Another Content Management System?</h2><p>
+There is no shortage of available software packages to manage web sites.
+ There are numerous, well-established content management systems 
+available commercially and as open source software. Many of the 
+available systems offer excellent support, mature development platforms,
+ large developer and user communities and in some cases thousands of 
+available third-party add-ons to meet almost every customization need.
+</p><p>
+What there is a shortage of is well-written, easy-to-use lightweight 
+content management systems for small web sites. The limited options 
+available to small web site owners often force the web site owner to 
+choose a system that has far more features and far more complexity than 
+are needed. 
+</p><h2>What Is A Small Web Site?</h2><p>We define a small web site as one which has fewer than 3 site 
+managers - very often just 1 - and one which is comprised of fewer than 
+100 pages, and perhaps two or three page layouts or templates. This type
+ of web site is commonly referred to as a brochure style web site and 
+accounts for the majority of sites on the world wide web.</p><p>
+SkyBlueCanvas Lightweight CMS is built to provide the small web site 
+owner with an easy-to-use web site manager. There is only as much 
+complexity as is absolutely necessary. SkyBlueCanvas is not meant to 
+meet every web site need or to compete
+with larger systems. The software is intended for small web sites with
+relatively simple requirements.
+</p><h2>What Is Included</h2><p>
+SkyBlueCanvas is simple but definitely not simplistic. The software 
+includes many features to allow it to be customized and adapted to a 
+variety of needs. These features include:
+</p><ul><li>Extensibile Core through Content Managers and Modules</li><li>Plugin API to allow code execution triggered on custom events</li><li>Skinnability through HTML/CSS templates</li></ul><h2>What Is Left Out</h2><p>
+Because SkyBlueCanvas Lightweight CMS is built for small web sites, many
+ features needed to support larger sites have been left out. Among these
+ are:
+</p><ul><li>No database is required</li><li>Zero configuration - just upload it to your web server and start
+ using it</li><li>No complicated User Management (<acronym title="Access Control 
+List">ACL</acronym>)</li><li>Hierarchical content (Sections, Categories, etc.)</li></ul>
+                </div>

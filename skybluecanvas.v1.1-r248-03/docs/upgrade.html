@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  lang="en-us">
+    <head>
+        <title>SkyBlueCanvas Upgrade Instructions</title>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" /> 
+        <style type="text/css">
+            body {padding: 15px 80px;}
+            pre, .callout {padding: 15px; border: 1px solid #DDD; background: #EEE; font-family: monospace, courier;}
+            * {font-family: Verdana, arial, sans-serif; font-size: 12px;}
+            h1 {font-size: 1.5em;}
+            div.section {padding-top: 0px;}
+            div.section h3 {padding: 10px; color: #FFF; background: #333;}
+            div.sub-section {padding-left: 20px;}
+            ol li, ul li {padding: 0px 0px 10px 0px;}
+            ul li {list-style-type: none;}
+            ul, ul li {padding-left: 0px; margin-left: 0px;}
+        </style>
+    </head>
+    <body id="top">
+        <h1>SkyBlueCanvas Upgrade Instructions</h1>
+        
+        <div class="callout">
+			<p>
+			    Upgrading SkyBlueCanvas is simple because all of the files that are editable 
+			    are contained in a single directory: <u>/skyblue/data/</u>.
+			</p>
+			<p>
+                When you upgrade to a new version of SkyBlueCanvas, you simply need to make 
+                a copy of this directory, install the new version following the instructions 
+                on the Installation page, then copy your data file back into <u>/skyblue/data/</u>.
+			</p>
+        </div>
+        
+        <h2>Contents</h2>
+        <div class="callout">
+            <ul>
+                <li><a href="#step-by-step">Step-by-step</a></li>
+                <li><a href="#ssh_install">SSH Installation</a></li>
+                <li><a href="#trouble-shooting">Trouble Shooting</a></li>
+                <li><a href="#get-help">Get Help</a></li>
+            </ul>
+        </div>
+
+        <h2 id="step-by-step">Step-by-Step</h2>
+        <ol>
+            <li>
+                Make a copy of /skyblue/data/ on your local computer
+            </li>
+            <li>
+                Copy the new version of SkyBlueCanvas into your web root
+            </li>
+            <li>
+                Compare <u>/new_skyblue/data/plugins/</u> with your 
+                <u>/old_skyblue/data/plugins/</u>. Any plugins that exist in the New SkyBlue, 
+                copy to your Old SkyBlue.
+            </li>
+            <li>
+                Delete the new <u>/skyblue/data/</u> directory
+            </li>
+            <li>
+                Move your copied <u>/skyblue/data/</u> directory back into the SkyBlueCanvas root
+            </li>
+            <li>
+                Make sure the file permissions for /skyblue/data/ are set to 755 or, if you 
+                have shell access, change the owner and group to the web process 
+                (chown -R apache:apache skyblue)
+            </li>
+        </ol>
+        <p><a href="#top">Top</a></p>
+        
+        <div class="callout">
+            <strong>NOTE</strong>
+            <p>
+                The htaccess rules may have changed in since the last version of SkyBlueCanvas. 
+                Be sure to update the file named .htaccess in your SkyBlueCanvas installation.
+            </p>
+        </div>
+    </body>
+</html>

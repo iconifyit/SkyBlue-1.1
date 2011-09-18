@@ -1,0 +1,5 @@
+Installation Instructions:
+
+- Copy /ext_cases/manager/cases to /your_skyblue_root/managers/
+- Copy /ext_cases/module/mod.cases.php to /your_skyblue_root/data/modules/
+- Make sure all file permissons are set to 775

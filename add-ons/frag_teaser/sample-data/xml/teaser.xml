@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<obj type="teaser">
+<item id="1"
+      name="This is title one"
+      intro="TG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNlY3RldHVlciBhZGlwaXNjaW5nIGVsaXQuIEN1cmFiaXR1ciBkYXBpYnVzIG5pc2kgZmF1Y2lidXMgZW5pbS4gTWFlY2VuYXMgbmlzaSB0dXJwaXMsIHZ1bHB1dGF0ZSBhdC4="
+      link="1"
+      objtype="teaser"
+      order="1">
+</item>
+
+<item id="2"
+      name="This is title two"
+      intro="TG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNlY3RldHVlciBhZGlwaXNjaW5nIGVsaXQuIEN1cmFiaXR1ciBkYXBpYnVzIG5pc2kgZmF1Y2lidXMgZW5pbS4gTWFlY2VuYXMgbmlzaSB0dXJwaXMsIHZ1bHB1dGF0ZSBhdC4="
+      link="1"
+      objtype=""
+      order="2">
+</item>
+
+<item id="3"
+      name="This is title three"
+      intro="TG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNlY3RldHVlciBhZGlwaXNjaW5nIGVsaXQuIEN1cmFiaXR1ciBkYXBpYnVzIG5pc2kgZmF1Y2lidXMgZW5pbS4gTWFlY2VuYXMgbmlzaSB0dXJwaXMsIHZ1bHB1dGF0ZSBhdC4="
+      link="1"
+      objtype=""
+      order="3">
+</item>
+
+<item id="4"
+      name="This is title four"
+      intro="TG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNlY3RldHVlciBhZGlwaXNjaW5nIGVsaXQuIEN1cmFiaXR1ciBkYXBpYnVzIG5pc2kgZmF1Y2lidXMgZW5pbS4gTWFlY2VuYXMgbmlzaSB0dXJwaXMsIHZ1bHB1dGF0ZSBhdC4="
+      link="1"
+      objtype=""
+      order="4">
+</item>
+
+<item id="5"
+      name="This is title five"
+      intro="TG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNlY3RldHVlciBhZGlwaXNjaW5nIGVsaXQuIEN1cmFiaXR1ciBkYXBpYnVzIG5pc2kgZmF1Y2lidXMgZW5pbS4gTWFlY2VuYXMgbmlzaSB0dXJwaXMsIHZ1bHB1dGF0ZSBhdC4="
+      link="1"
+      objtype=""
+      order="5">
+</item>
+
+	</obj>
+</root>

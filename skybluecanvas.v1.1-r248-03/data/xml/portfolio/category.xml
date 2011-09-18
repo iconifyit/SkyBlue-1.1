@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<obj type="category">
+<item id="2"
+      objtype="category"
+      title="Category One"
+      thumbnail=""
+      artwork=""
+      story="portfolio.category.2.txt">
+</item>
+
+<item id="4"
+      objtype="category"
+      title="Easy Slider"
+      thumbnail=""
+      artwork=""
+      story="portfolio.category.4.txt"
+      order="">
+</item>
+
+<item id="5"
+      objtype="category"
+      title="My Photos"
+      thumbnail=""
+      artwork=""
+      order=""
+      story="portfolio.category.5.txt">
+</item>
+
+	</obj>
+</root>

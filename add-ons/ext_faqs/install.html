@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  lang="en-us">
+    <head>
+        <title>FAQs Extension Installation</title>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" /> 
+        <style type="text/css">
+            body {padding: 15px 80px;}
+            .callout, pre {padding: 15px; border: 1px solid #DDD; background: #EEE; font-family: monospace, courier;}
+            .callout, pre {font-family: Verdana, Arial, sans-serif;}
+            * {font-family: Verdana, arial, sans-serif; font-size: 12px;}
+            h1 {font-size: 1.5em;}
+            ol {padding: 0px 0px 0px 20px;}
+            ol li ul {list-style: lower-alpha; padding: 0px 0px 0px 20px;}
+            ol li ul li {padding: 3px 0px;}
+        </style>
+    </head>
+    <body id="top">
+        <h1 class="callout">FAQs Extension Installation</h1>
+        
+        <h2>Contents</h2>
+        <ul>
+            <li><a href="#requirements">System Requirements</a></li>
+            <li><a href="#instructions">Installation Instructions</a></li>
+            <li><a href="#about-faqs">About FAQs Extension</a></li>
+            <li><a href="#faqs-fragment">FAQs Fragment</a></li>
+            <li><a href="#faqs-fragment-html"">FAQs Fragment HTML</a></li>
+            <li><a href="#displaying">Displaying FAQs on your site</a></li>
+        </ul>
+        
+        <h2 id="requirements">System Requirements</h2>
+        <ul>
+        	<li>SkyBlueCanvas v1.1</li>
+        	<li>PHP 4 or above</li>
+        	<li>Apache Web Server</li>
+        </ul>
+        <p><a href="#top">Top</a></p>
+        
+        <h2 id="instructions">Installation Instructions</h2>
+        
+        <ol>
+        	<li>Log into the <strong>Admin</strong> section of your SkyBlueCanvas site at <u>www.yoursite.com/admin.php</u>.</li>
+        	<li>Navigate to <strong>Admin &gt; Collections &gt; Installer</strong>.</li>
+			<li>
+				<ul>
+					<li>Click on the <strong>Managers</strong> tab.</li>
+					<li>Click the button labeled <strong>New</strong> in the upper-right corner of the admin page.</li>
+					<li>Click the button labeled <strong>Browse</strong>.</li>
+					<li>Using the file browser that appears, locate the FormBuilder Manager ZIP file in <u>ext_faqs/packages/manager/faqs.zip</u>.</li>
+					<li>Click the button labeled <strong>Install</strong>.</li>
+				</ul>
+			</li>
+			<li>
+				<ul>
+					<li>Click on the <strong>Fragments</strong> tab.</li>
+					<li>Click the button labeled <strong>New</strong> in the upper-right corner of the admin page.</li>
+					<li>Click the button labeled <strong>Browse</strong>.</li>
+					<li>Using the file browser that appears, locate the FormBuilder Fragment ZIP file in <u>ext_faqs/packages/fragment/faqs.zip</u>.</li>
+					<li>Click the button labeled <strong>Install</strong>.</li>
+				</ul>
+			</li>
+        </ol>
+        <p><a href="#top">Top</a></p>
+        
+        <h2 id="about-faqs">About FAQs</h2>
+        <p>
+        The FAQs Extension allows you to add a Frequently Asked Questions section to your site. 
+        The manager allows you to group questions based on topic. For instance Company Info, 
+        Product Details, etc.
+        </p>
+        <p><a href="#top">Top</a></p>
+        
+        <h3 id="faqs-fragment">FAQs Fragment</h3>
+        <p>
+            Fragments are bits of code that output the HTML for a portion of a web page. Many times the fragment 
+            will be associated with some data item (for example FAQs). It is important to keep in mind, that 
+            it is impossible for any single piece of software or code to meet the needs of every user or 
+            every web site design. 
+        </p>
+        <p>
+            While we have done our best to design SkyBlueCanvas so that it can be customized with 
+            "minimal" coding, it may still require "some" coding. Customizing the appearance of your 
+            FAQs may require some modification on your part to the fragment code.
+        </p>
+        <p><a href="#top">Top</a></p>
+        
+        <h4 id="faqs-fragment-html">The Fragment HTML</h4>
+        <p>The FAQs fragment HTML is structured to allow you to easily customize the appearance using 
+        CSS (cascading style sheets) and JavaScript. The basic structure is:
+        </p>
+<pre class="html">
+&lt;div class="faqs-group"&gt;
+    &lt;h2&gt;The Group Title&lt;/h2&gt;
+    &lt;h3 class="faqs-question"&gt;
+        &lt;a href="#answer1-1"&gt;What is your quest?&lt;/a&gt;
+    &lt;/h3&gt;
+    &lt;div class="faqs-answer" id="answer1-1"&gt;
+        &lt;p&gt;To find the holy grail.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;h3 class="faqs-question"&gt;
+        &lt;a href="#answer1-2"&gt;What is your favorite color?&lt;/a&gt;
+    &lt;/h3&gt;
+    &lt;div class="faqs-answer" id="answer1-2"&gt;
+        &lt;p&gt;Blue. No, Green. Aaaaahhh.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+        <p>
+            Instructions for styling and behaviors using CSS and JavaScript are beyond the scope 
+            of this document.
+        </p>
+        <p><a href="#top">Top</a></p>
+
+        <h2 id="displaying">Displaying FAQs on Your Site</h2>
+        <p>
+        There are two methods by which you can display FAQs on your site. The first is to create 
+        a skin specifically for the FAQs. The second is to load the FAQs in the article body of 
+        a page using the default skin.
+        </p>
+        
+        <h3>FAQ-specific Skin</h3>
+        <p>
+            To create a skin specifically for your FAQs, make a copy of your default skin and 
+            name it skin.faqs.html. In the region of the HTML where you want your FAQs to appear, 
+            add the following code:
+        </p>
+<pre class="html">
+&lt;!--#plugin:fragment(faqs,view)-->
+</pre>
+
+        <p>So your template HTML might look like:</p>
+        
+<pre class="html">
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" {doc:lang}&gt;
+    &lt;head&gt;
+        &lt;title&gt;[[page.title]]&lt;/title&gt;
+        &lt;meta http-equiv="Content-Type" content="text/html;charset=UTF-8" /&gt;     
+        &lt;?php echo $this-&gt;get_meta_data(); ?&gt;
+        &lt;link rel="stylesheet" type="text/css" href="&lt;?php echo $this-&gt;get_path(); ?&gt;css/TechJunkie.css" /&gt;
+        &lt;link href="[[site.url]]rss/" rel="alternate" type="application/rss+xml" title="[[site.name]] RSS Feed" /&gt;
+        &lt;!--#plugin.preloader--&gt;
+    &lt;/head&gt;
+    &lt;body id="homepage"&gt;
+        &lt;div id="wrap"&gt;
+            &lt;!--#plugin:fragment(header)--&gt;
+            &lt;div id="menu"&gt;
+                &lt;!--#plugin:fragment(menu,view,menu=1)--&gt;
+            &lt;/div&gt;                    
+            &lt;div id="content-wrap"&gt;
+                &lt;div id="main"&gt;
+                    &lt;!--#plugin:fragment(faqs,view)--&gt; 
+                &lt;/div&gt;
+                &lt;div id="sidebar"&gt;
+                    &lt;!--#plugin:fragment(sidebar)--&gt;
+                &lt;/div&gt;        
+            &lt;/div&gt;
+            &lt;div id="footer-wrap"&gt;
+                &lt;!--#plugin:fragment(footer)--&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;        
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+        <p>
+        Next, create a new page in <strong>Admin &gt; Pages</strong>. On the Meta Tab of the page 
+        editor, set "Layout Type" to "FAQs".
+        </p>
+        
+        <h3>Page Article Method</h3>
+        <p>
+            To display your FAQs in the article text of the page, go to <strong>Admin &gt; Pages</strong> 
+            and click the Edit icon next to the page to which you want to add the FAQs. In the 
+            article body of that page, add the following code:
+        </p>
+        
+<pre class="html">
+{plugin:fragment(faqs,view)}
+</pre>      
+        <p><a href="#top">Top</a></p>
+
+    </body>
+</html>

@@ -1,0 +1,13 @@
+- Integrated Snippets extension into the core system
+- Added /includes/hooks.php
+- Added /includes/JSON.php
+- Fixed a bug in Core::GetVar() where the $default value was required but should have been optional
+- Added Snippet button to WYMeditor to insert snippets into page text
+- Removed the Collections Publishing features from Page Manager and Collections
+- Added [[page.metadata]] and [[skin.path]] variables to SiteVars
+- Removed pre-1.1 skin hooks
+- Modified plugin.parser.php to remove P tags that WYMeditor adds around in-line tokensw.
+- Made the SESSION timeout editable by the admin user.
+- Added an option to the Page manager, SiteMapper plugin and SiteVars to allow admin to omit pages from the site map.
+- Modified Configuration editor to update the SiteMap when saved.
+- Updated SiteMapper class to match new Google SiteMap XML

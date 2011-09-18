@@ -1,0 +1,95 @@
+<input id="id" type="hidden" name="id" value="{OBJ:ID}" />
+<input id="objtype" type="hidden" name="objtype" value="snippets" />
+<!--#error_message-->
+<tr>
+    <th valign="top">Name:</th>
+    <td valign="top">
+        <input type="text" 
+               name="name" 
+               value="{OBJ:NAME}" 
+               size="57" 
+               />
+    </td>
+</tr>
+<tr>
+    <th valign="top">Type:</th>
+    <td valign="top">
+        <input type="text" 
+               name="snippettype" 
+               value="{OBJ:SNIPPETTYPE}" 
+               size="57"
+               readonly="readonly"
+               />&nbsp;
+        <a href="admin.php?mgroup=collections&mgr=snippets&objtype=snippets&sub=change&id={OBJ:ID}&snippettype={OBJ:SNIPPETTYPE}">Change</a>
+    </td>
+</tr>
+<tr>
+    <th valign="top">Snippet Text:</th>
+    <td colspan="4">
+        <!--#textarea-->
+        <!--{OBJ:STORY_CONTENT}-->
+    </td>
+</tr>
+<tr>
+    <th valign="top">Link To:</th>
+    <td valign="top">
+        {OBJ:LINK} 
+        &nbsp;<input type="text" id="external_link" name="external_link" value="{OBJ:EXTERNAL_LINK}" size="50" />
+    </td>
+</tr>
+<tr>
+    <th valign="top">Link Text:</th>
+    <td valign="top">
+        <input type="text" id="linktext" name="linktext" value="{OBJ:LINKTEXT}" size="50" />
+    </td>
+</tr>
+
+<tr>
+    <th valign="top" colspan="2">Page Text Token: (Copy/Paste the token below into your page text to display this snippet)</th>
+</tr>
+<tr>
+    <td valign="middle" colspan="2">
+        {snippet(snippet_{OBJ:ID})}
+    </td>
+</tr>
+<tr>
+    <th valign="top" colspan="2">Page Text Token: (Copy/Paste the token below into your template display this snippet)</th>
+</tr>
+<tr>
+    <td valign="middle" colspan="2">
+        &lt;!--#snippet(snippet_{OBJ:ID})--&gt;
+    </td>
+</tr>
+
+<tr>
+    <th valign="top" colspan="2">For styling purposes, the Snippet HTML will look like this:</th>
+</tr>
+<tr>
+    <td valign="middle" colspan="2">
+        &lt;span class="snippet" id="snippet_{OBJ:ID}"&gt;
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;{ Your Snippet text here }<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="link"&gt;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="{ Your Snippet Link }"&gt;&lt;span class="linktext"&gt;{ Your Link Text }&lt;/span&gt;&lt;/a&gt;
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;/span&gt;<br />
+        &lt;/span&gt;
+    </td>
+</tr>
+
+<script type="text/javascript">
+$(function() {
+    if ($("select[@name='link']").val() == "external") {
+        $("#external_link").fadeIn("slow");
+    }
+    else {
+        $("#external_link").hide();
+    }
+    $("select[@name='link']").change(function() {
+        if ($(this).val() == "external") {
+            $("#external_link").fadeIn("slow");
+        }
+        else {
+            $("#external_link").fadeOut("slow");
+        }
+    });
+});
+</script>

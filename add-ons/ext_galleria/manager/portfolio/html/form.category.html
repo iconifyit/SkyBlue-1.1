@@ -1,0 +1,40 @@
+<input type="hidden" name="id" value="{OBJ:ID}" />
+<input type="hidden" name="objtype" value="category" />
+<tr>
+    <td valign="top">Title:</td>
+    <td valign="top">
+        <input type="text" name="title" value="{OBJ:TITLE}" size="45" />
+    </td>
+</tr>
+
+<tr>
+    <td valign="top">Thumbnail:</td>
+    <td valign="top">
+        {OBJ:THUMBNAIL}
+        <br />
+        {OBJ:THUMBIMG}
+    </td>
+</tr>
+
+<tr>
+    <td valign="top">Artwork:</td>
+    <td valign="top">
+        {OBJ:ARTWORK}
+        <br />
+        {OBJ:ARTIMG}
+    </td>
+</tr>
+
+<tr>
+    <td valign="top">Description:</td>
+    <td valign="top">
+        <textarea name="description" cols="44" rows="5">{OBJ:DESCRIPTION}</textarea>
+    </td>
+</tr>
+
+<tr>
+    <td>Order:</td>
+    <td>
+        {OBJ:ORDER}
+    </td>
+</tr>
