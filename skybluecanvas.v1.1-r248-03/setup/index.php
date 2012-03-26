@@ -1,10 +1,10 @@
 <?php
 
 /**
-* @version		1.1 RC1 2008-11-20 21:18:00 $
-* @package		SkyBlueCanvas
-* @copyright	Copyright (C) 2005 - 2008 Scott Edwin Lewis. All rights reserved.
-* @license		GNU/GPL, see COPYING.txt
+* @version        1.1 RC1 2008-11-20 21:18:00 $
+* @package        SkyBlueCanvas
+* @copyright    Copyright (C) 2005 - 2008 Scott Edwin Lewis. All rights reserved.
+* @license        GNU/GPL, see COPYING.txt
 * SkyBlueCanvas is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
 * is derivative of works licensed under the GNU General Public License or
@@ -110,47 +110,47 @@ class SetupWizard {
         
             $this->hasPosix = $this->hasPosixEnabled();
         
-			$this->event = $Core->GetVar($_REQUEST, SETUP_KEY_EVENT, null);
-	
-			if ($this->event !== SETUP_KEY_FINISH && $this->CheckExistingInstall()) {
-				$this->ShowNoInstall(); 
-				exit(0);
-			}
+            $this->event = $Core->GetVar($_REQUEST, SETUP_KEY_EVENT, null);
+    
+            if ($this->event !== SETUP_KEY_FINISH && $this->CheckExistingInstall()) {
+                $this->ShowNoInstall(); 
+                exit(0);
+            }
 
-			$this->GetLastError();
-			
-			switch ($this->event) {
-				case SETUP_KEY_SAVEPASS:
-					$this->SavePassword();
-					break;
-				case SETUP_KEY_FINISH:
-					$this->Finish();
-					break;
-			    case SETUP_KEY_SAVEURL:
-			        $this->SaveUrl();
-			        break;
-			    case SETUP_KEY_SHOWURL:
-					if (!$this->DoConfigCheck()) {
-						$Core->SBRedirect(SETUP_URL_START);
-					}
-			        $this->UrlPage();
-			        $this->ShowPage();
-			        break;
-				case SETUP_KEY_PASSWORD:
-				case SETUP_KEY_START:
-					if (!$this->DoConfigCheck()) {
-						$Core->SBRedirect(SETUP_URL_START);
-					}
-					$this->StartPage();
-					$this->ShowPage();
-					break;
-			    case 'login':
-			        $Core->SBRedirect(SETUP_URL_LOGIN);
-			        break;
-			    default:
-					$this->ShowConfigTable();
-			        break;
-			}
+            $this->GetLastError();
+            
+            switch ($this->event) {
+                case SETUP_KEY_SAVEPASS:
+                    $this->SavePassword();
+                    break;
+                case SETUP_KEY_FINISH:
+                    $this->Finish();
+                    break;
+                case SETUP_KEY_SAVEURL:
+                    $this->SaveUrl();
+                    break;
+                case SETUP_KEY_SHOWURL:
+                    if (!$this->DoConfigCheck()) {
+                        $Core->SBRedirect(SETUP_URL_START);
+                    }
+                    $this->UrlPage();
+                    $this->ShowPage();
+                    break;
+                case SETUP_KEY_PASSWORD:
+                case SETUP_KEY_START:
+                    if (!$this->DoConfigCheck()) {
+                        $Core->SBRedirect(SETUP_URL_START);
+                    }
+                    $this->StartPage();
+                    $this->ShowPage();
+                    break;
+                case 'login':
+                    $Core->SBRedirect(SETUP_URL_LOGIN);
+                    break;
+                default:
+                    $this->ShowConfigTable();
+                    break;
+            }
     }
     
     function SetupWizard() {
@@ -164,13 +164,13 @@ class SetupWizard {
     function makeRequiredDirs() {
         $required = array(
             SETUP_PATH_TO_ROOT . 'data/ads',
-			SETUP_PATH_TO_ROOT . 'data/gadgets',
-			SETUP_PATH_TO_ROOT . 'cache'
+            SETUP_PATH_TO_ROOT . 'data/gadgets',
+            SETUP_PATH_TO_ROOT . 'cache'
         );
         for ($i=0; $i<count($required); $i++) {
             if (!is_dir($required[$i])) {
-				FileSystem::make_dir($required[$i]);
-			}
+                FileSystem::make_dir($required[$i]);
+            }
         }
     }
     
@@ -186,44 +186,44 @@ class SetupWizard {
         $this->safeMode = $safemode;
                 
         $files = $Core->ListFiles(SETUP_PATH_TO_ROOT . 'data/xml/', array());
-		$dirs  = array(
-		    SETUP_PATH_TO_ROOT . 'data/',
-			SETUP_PATH_TO_ROOT . 'data/ads/',
-			SETUP_PATH_TO_ROOT . 'data/gadgets/',
-			SETUP_PATH_TO_ROOT . 'data/media/',
-			SETUP_PATH_TO_ROOT . 'data/plugins/',
-			SETUP_PATH_TO_ROOT . 'data/skins/',
-			SETUP_PATH_TO_ROOT . 'data/xml/'
-		);
-		
-		$dir_list = array();
-		for ($i=0; $i<count($dirs); $i++) {
-		    $writable = FileSystem::writable($dirs[$i]);
-			if ($writable) {
-				$dir_flag = 0;
-			}
-			array_push($dir_list, array($dirs[$i], $writable));
-		}
-		
-		$file_list = array();
-		for ($i=0; $i<count($files); $i++) {
-		    $writable = FileSystem::writable($files[$i]);
-			if ($writable) {
-				$file_flag = 0;
-			}
-			array_push($file_list, array($files[$i], $writable));
-		}
-		
-		$this->configTable = array(
-		    'safe_mode' => $safemode,
-		    'dir_list'  => $dir_list,
-		    'file_list' => $file_list
-		);
-		
-		if ($dir_flag == 1 || $file_flag == 1) {
-		    return false;
-		}
-		return true;
+        $dirs  = array(
+            SETUP_PATH_TO_ROOT . 'data/',
+            SETUP_PATH_TO_ROOT . 'data/ads/',
+            SETUP_PATH_TO_ROOT . 'data/gadgets/',
+            SETUP_PATH_TO_ROOT . 'data/media/',
+            SETUP_PATH_TO_ROOT . 'data/plugins/',
+            SETUP_PATH_TO_ROOT . 'data/skins/',
+            SETUP_PATH_TO_ROOT . 'data/xml/'
+        );
+        
+        $dir_list = array();
+        for ($i=0; $i<count($dirs); $i++) {
+            $writable = FileSystem::writable($dirs[$i]);
+            if ($writable) {
+                $dir_flag = 0;
+            }
+            array_push($dir_list, array($dirs[$i], $writable));
+        }
+        
+        $file_list = array();
+        for ($i=0; $i<count($files); $i++) {
+            $writable = FileSystem::writable($files[$i]);
+            if ($writable) {
+                $file_flag = 0;
+            }
+            array_push($file_list, array($files[$i], $writable));
+        }
+        
+        $this->configTable = array(
+            'safe_mode' => $safemode,
+            'dir_list'  => $dir_list,
+            'file_list' => $file_list
+        );
+        
+        if ($dir_flag == 1 || $file_flag == 1) {
+            return false;
+        }
+        return true;
     }
     
     function getExpectedPerms($file) {
@@ -232,23 +232,23 @@ class SetupWizard {
             return "775";
         }
     
-		$pgid = FileSystem::process_gid();
-		$puid = FileSystem::process_uid();
-		$sgid = FileSystem::file_group($file);
-		$suid = FileSystem::file_uid($file);
-		$snam = FileSystem::file_owner($file);
-		$pmem = FileSystem::process_members();
-		
-		if ($puid == $suid) {
-			return "644";
-		}
-		else if ($pgid == $sgid) {
-			return "775";
-		}
-		else if (in_array($suid, $pmem) || in_array($snam, $pmem)) {
-			return "775";
-		}
-		return "777";
+        $pgid = FileSystem::process_gid();
+        $puid = FileSystem::process_uid();
+        $sgid = FileSystem::file_group($file);
+        $suid = FileSystem::file_uid($file);
+        $snam = FileSystem::file_owner($file);
+        $pmem = FileSystem::process_members();
+        
+        if ($puid == $suid) {
+            return "644";
+        }
+        else if ($pgid == $sgid) {
+            return "775";
+        }
+        else if (in_array($suid, $pmem) || in_array($snam, $pmem)) {
+            return "775";
+        }
+        return "777";
     }
     
     function ShowConfigTable() {
@@ -279,12 +279,12 @@ class SetupWizard {
         $class = 'pass';
         $value = 'Off';
         if ($safemode == 1) {
-			$class = 'fail';
-			$value = 'On';
+            $class = 'fail';
+            $value = 'On';
         }
         
         $server_settings = 
-        	"<tr><td class=\"$class\">Safe Mode</td>" 
+            "<tr><td class=\"$class\">Safe Mode</td>" 
             . "<td class=\"$class\" align=\"center\">{$value}</td>" 
             . "<td class=\"expected\" align=\"center\">Off</td></tr>";
         
@@ -297,10 +297,10 @@ class SetupWizard {
         if (!$this->hasPosix) {
             $posix = "Disabled";
         }
-		$server_settings .= 
-			"<tr><td class=\"$class\">Posix Library</td>" 
-			. "<td class=\"$class\" align=\"center\">{$posix}</td>" 
-			. "<td class=\"expected\" align=\"center\">Enabled</td></tr>";
+        $server_settings .= 
+            "<tr><td class=\"$class\">Posix Library</td>" 
+            . "<td class=\"$class\" align=\"center\">{$posix}</td>" 
+            . "<td class=\"expected\" align=\"center\">Enabled</td></tr>";
 
         $this->html = str_replace(
             '{config_test:settings}',
@@ -531,25 +531,25 @@ class SetupWizard {
         }
             
         $_SESSION[SETUP_KEY_ERROR] = null;
-		$this->InitLoginFile();
-		
-		$login = new stdClass;
-		$login->id = 1;
-		$login->username = md5(
-			SB_PASS_SALT.$Core->GetVar($_POST, SETUP_KEY_USERNAME, null)
-	    );
-		$login->password = md5(
-			SB_PASS_SALT.$Core->GetVar($_POST, SETUP_KEY_PASSWORD, null)
-		);
+        $this->InitLoginFile();
+        
+        $login = new stdClass;
+        $login->id = 1;
+        $login->username = md5(
+            SB_PASS_SALT.$Core->GetVar($_POST, SETUP_KEY_USERNAME, null)
+        );
+        $login->password = md5(
+            SB_PASS_SALT.$Core->GetVar($_POST, SETUP_KEY_PASSWORD, null)
+        );
 
-		$xml = $Core->xmlHandler->ObjsToXML(array($login), SETUP_STR_LOGIN);
-		
-		if (!$Core->WriteFile(SB_LOGIN_FILE, $xml, 1)) {
-			$this->IsError = 1;
-			$this->SetError(SETUP_PASSWORD_NOT_SAVED);
-			$Core->SBRedirect(SETUP_URL_PASSWORD);
-		} 
-		$Core->SBRedirect(SETUP_URL_FINISH);
+        $xml = $Core->xmlHandler->ObjsToXML(array($login), SETUP_STR_LOGIN);
+        
+        if (!$Core->WriteFile(SB_LOGIN_FILE, $xml, 1)) {
+            $this->IsError = 1;
+            $this->SetError(SETUP_PASSWORD_NOT_SAVED);
+            $Core->SBRedirect(SETUP_URL_PASSWORD);
+        } 
+        $Core->SBRedirect(SETUP_URL_FINISH);
     }
     
     function SaveUrl() {
@@ -560,7 +560,7 @@ class SetupWizard {
         
         $arr = $this->sbc_parse_url($url);
         
-        if (!isset($arr['host']) || empty($arr['host'])) {
+        if (! isset($arr['host']) || empty($arr['host'])) {
             $this->IsError = 1;
             $this->SetError(
                 "You must specify a fully-qualified domain.<br />" 
@@ -571,25 +571,30 @@ class SetupWizard {
         }
         
         $_SESSION[SETUP_KEY_ERROR] = null;
-		
-		$config = $Core->xmlHandler->ParserMain(SB_CONFIG_XML_FILE);
-		$config = $config[0];
-		
-		$config->site_url = $url;
-		
-		$xml = $Core->xmlHandler->ObjsToXML(array($config), "configuration");
-		
-		if (!$Core->WriteFile(SB_CONFIG_XML_FILE, $xml, 1)) {
-			$this->IsError = 1;
-			$this->SetError("Your web site address could not be saved");
-			$Core->SBRedirect(SETUP_URL_URL);
-		} 
-		$Core->SBRedirect(SETUP_URL_PASSWORD);
+        
+        $config = $Core->xmlHandler->ParserMain(SB_CONFIG_XML_FILE);
+        $config = $config[0];
+        
+        /**
+         * Add trailing slash 
+         */
+        if ($url{strlen($url-1)} != "/") $url .= "/";
+        
+        $config->site_url = $url;
+        
+        $xml = $Core->xmlHandler->ObjsToXML(array($config), "configuration");
+        
+        if (!$Core->WriteFile(SB_CONFIG_XML_FILE, $xml, 1)) {
+            $this->IsError = 1;
+            $this->SetError("Your web site address could not be saved");
+            $Core->SBRedirect(SETUP_URL_URL);
+        } 
+        $Core->SBRedirect(SETUP_URL_PASSWORD);
     }
     
     function sbc_parse_url($url) {
-		if (empty($url)) return array();
-		return @parse_url($url);
+        if (empty($url)) return array();
+        return @parse_url($url);
     }
     
     function ShowPage() {
