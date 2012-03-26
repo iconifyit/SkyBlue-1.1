@@ -112,7 +112,7 @@ echo str_replace(WYM_RELATIVE_PATH, FULL_URL, $html);
 $Core->trigger('OnAfterShowPage');
 
 // Just doing some performance measuring
-
+ 
 $time_taken = round(getmicrotime()-$time_start,4);
 echo "\n<!-- Generated in $time_taken seconds -->" ;
 
