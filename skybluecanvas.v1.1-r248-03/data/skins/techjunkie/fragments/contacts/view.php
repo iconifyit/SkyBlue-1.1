@@ -75,14 +75,6 @@ if (the_action() == "send") {
                 <div class="buttons">
                     <input type="submit" name="action" value="Send" class="button" />
                 </div>
-                <div id="contact_mailing_list">
-                    <label class="fieldlabel">
-                    Would you like to be added to our mailing list?
-	                </label>
-	                <input type="radio" name="mailinglist" value="1" checked="checked" />&nbsp;Yes&nbsp;
-	                <input type="radio" name="mailinglist" value="0" />&nbsp;No&nbsp;
-                </div>
-                <input type="hidden" name="cc" value="0" />
             </div>
         </fieldset>
     </form>
