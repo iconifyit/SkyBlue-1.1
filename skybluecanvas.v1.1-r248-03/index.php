@@ -1,10 +1,10 @@
 <?php @ob_start("ob_gzhandler");
 
 /**
- * @version		1.1 r247 2010-02-23 20:10:00 $
- * @package		SkyBlueCanvas
- * @copyright	Copyright (C) 2005 - 2008 Scott Edwin Lewis. All rights reserved.
- * @license		http://opensource.org/licenses/gpl-license.php GNU Public License
+ * @version        1.1 r247 2010-02-23 20:10:00 $
+ * @package        SkyBlueCanvas
+ * @copyright      Copyright (C) 2005 - 2008 Scott Edwin Lewis. All rights reserved.
+ * @license        http://opensource.org/licenses/gpl-license.php GNU Public License
  * SkyBlueCanvas is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
  * is derivative of works licensed under the GNU General Public License or
@@ -73,13 +73,13 @@ $html = "";
 $errorPage = null;
 if ($Filter->get($_GET, 'pid', DEFAULT_PAGE) == NOT_FOUND) {
     $Core->trigger('OnBeforeErrorPage');
-	if ($errorPage = $Router->pageNotFound()) {
-		$_GET['pid'] = $errorPage->id;
-	}
-	else {
-	    header("HTTP/1.0 404 Not Found");
-	    die(NO_404_PAGE);
-	}
+    if ($errorPage = $Router->pageNotFound()) {
+        $_GET['pid'] = $errorPage->id;
+    }
+    else {
+        header("HTTP/1.0 404 Not Found");
+        die(NO_404_PAGE);
+    }
 }
 
 if ($Filter->get($config, 'use_cache', 0) && $Cache->isCached()) {
@@ -89,9 +89,9 @@ if ($Filter->get($config, 'use_cache', 0) && $Cache->isCached()) {
 
 $Skin = new Skin($Filter->get($_GET, 'pid', DEFAULT_PAGE));
 if (empty($html)) {
-	$html = $Skin->getHtml();
-	$html = str_replace(TOKEN_SKYBLUE_INFO_LINK, SKYBLUE_INFO_LINK, $html);
-	$html = str_replace(TOKEN_BODY_CLASS, null, $html);
+    $html = $Skin->getHtml();
+    $html = str_replace(TOKEN_SKYBLUE_INFO_LINK, SKYBLUE_INFO_LINK, $html);
+    $html = str_replace(TOKEN_BODY_CLASS, null, $html);
 }
 
 $html = $Core->trigger('OnBeforeShowPage', $html);
