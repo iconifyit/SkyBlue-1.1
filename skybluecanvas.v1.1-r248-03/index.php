@@ -17,16 +17,16 @@ $time_start = getmicrotime();
 define('DS', DIRECTORY_SEPARATOR);
 
 /**
-* SKYBLUE, _SBC_ROOT_ and BASE_PAGE must all be defined before including 
-* the base.php file.
-*
-* SKYBLUE - A security check to make sure any core files are being included 
-*           locally.
-*
-* _SBC_ROOT_ - The relative path to the root from the including file.
-*
-* BASE_PAGE  - the name of the FrontController page (index.php|admin.php)
-*/
+ * SKYBLUE, _SBC_ROOT_ and BASE_PAGE must all be defined before including 
+ * the base.php file.
+ *
+ * SKYBLUE - A security check to make sure any core files are being included 
+ *           locally.
+ *
+ * _SBC_ROOT_ - The relative path to the root from the including file.
+ *
+ * BASE_PAGE  - the name of the FrontController page (index.php|admin.php)
+ */
 
 define('SKYBLUE', 1);
 define('_SBC_ROOT_', './');
