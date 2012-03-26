@@ -12,13 +12,11 @@ global $config;
 if (the_action() == "send") {
     handle_contact_form(the_contact($data, $config));
 }
-
 ?>
-<!-- CONTACT FORM -->
 <div id="contact_form_div">
     <?php echo the_message(); ?>
     <?php 
-    echo '<h2>'.$config['site_name'].'</h2>'."\r\n";
+    echo "<h2>{$config['site_name']}</h2>\n";
     if ($contact_name = $Filter->get($config, 'contact_name', null)) {
         echo "<h3>{$contact_name}</h3>\n";
     }
@@ -42,36 +40,18 @@ if (the_action() == "send") {
                 <label class="fieldlabel">To:</label>
                 <select name="cid">
                     <?php foreach ($data as $contact) : ?>
-                    <option value="<?php echo $contact->id; ?>"><?php echo $contact->name; ?></option>
+                        <option value="<?php echo $contact->id; ?>"><?php echo $contact->name; ?></option>
                     <?php endforeach; ?>
                 </select>
                 <?php endif; ?>
                 <label class="fieldlabel">Name:</label>
-                <input type="text" 
-                       name="name" 
-                       size="47" 
-                       class="inputbox" 
-                       value="" 
-                       />
+                <input type="text" name="name" size="47" class="inputbox" value="" />
                 <label class="fieldlabel">Email Address:</label>
-                <input type="text" 
-                       name="email" 
-                       size="47" 
-                       class="inputbox" 
-                       value="" 
-                       />
+                <input type="text" name="email" size="47" class="inputbox" value="" />
                 <label class="fieldlabel">Subject:</label>
-                <input type="text" 
-                       name="subject" 
-                       size="47" 
-                       class="inputbox" 
-                       value="" 
-                       />
+                <input type="text" name="subject" size="47" class="inputbox" value="" />
                 <label class="fieldlabel">Message:</label>
-                <textarea cols="44" 
-                          rows="5" 
-                          name="message" 
-                          class="inputbox"></textarea>
+                <textarea cols="44" rows="5" name="message" class="inputbox"></textarea>
                 <div class="buttons">
                     <input type="submit" name="action" value="Send" class="button" />
                 </div>
@@ -79,4 +59,3 @@ if (the_action() == "send") {
         </fieldset>
     </form>
 </div>
-<!-- END CONTACT FORM -->
