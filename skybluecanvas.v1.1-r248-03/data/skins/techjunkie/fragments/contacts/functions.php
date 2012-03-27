@@ -12,38 +12,32 @@ function check_address($config) {
 
 function the_contact($contacts, $config) {
     global $Core;
-    global $Filter;
-    $contact = $Core->SelectObj($contacts, $Filter->get($_POST, 'cid', null));
+    $contact = $Core->SelectObj($contacts, Filter::get($_POST, 'cid', null));
     return isset($contact->email) ? $contact->email : $config['contact_email'];
 }
 
 function the_form_action() {
     global $Router;
-    global $Filter;
-    return $Router->GetLink($Filter->get($_GET, 'pid', ''));
+    return $Router->GetLink(Filter::get($_GET, 'pid', ''));
 }
 
 function the_message() {
-    global $Filter;
-    $message = $Filter->get($_SESSION, 'contact_form_message', array());
+    $message = Filter::get($_SESSION, 'contact_form_message', array());
     if (empty($message)) return null;
     unset($_SESSION['contact_form_message']);
     return get_message_string($message);
 }
 
 function get_message_string($message) {
-    global $Filter;
     return 
-    "<div class=\"" . $Filter->get($message, 'class', 'none') . "\">\n" . 
-    "<h2>" . $Filter->get($message, 'title', null) . "</h2>\n" . 
-    "<p>" . $Filter->get($message, 'string', null) . "</p>\n" .
+    "<div class=\"" . Filter::get($message, 'class', 'none') . "\">\n" . 
+    "<h2>" . Filter::get($message, 'title', null) . "</h2>\n" . 
+    "<p>" . Filter::get($message, 'string', null) . "</p>\n" .
     "</div>\n";
 }
 
 function the_action() {
-    global $Core;
-    global $Filter;
-    return strToLower($Filter->get($_POST, 'action', ''));
+    return strToLower(Filter::get($_POST, 'action', ''));
 }
 
 function set_message($class, $title, $string) {
@@ -56,15 +50,12 @@ function set_message($class, $title, $string) {
 
 function handle_contact_form($mailto) {
     global $Core;
-    global $Filter;
     
     $form = array();
-    $form['name']        = $Filter->get($_POST, 'name', '');
-    $form['email']       = $Filter->get($_POST, 'email', '');
-    $form['subject']     = $Filter->get($_POST, 'subject', '');
-    $form['message']     = $Filter->get($_POST, 'message', '');
-    $form['cc']          = $Filter->get($_POST, 'cc', FALSE);
-    $form['mailinglist'] = $Filter->get($_POST, 'mailinglist', 0); 
+    $form['name']        = Filter::get($_POST, 'name', '');
+    $form['email']       = Filter::get($_POST, 'email', '');
+    $form['subject']     = Filter::get($_POST, 'subject', '');
+    $form['message']     = Filter::get($_POST, 'message', '');
         
     $errors = array();
     foreach ($form as $k=>$v) {
@@ -100,17 +91,17 @@ function handle_contact_form($mailto) {
 
         if (bashMail($form['subject'], $txtvers, $mailto)) {
             set_message(
-				'success',
-				'Your message has been sent',
-				'We will be in touch shortly'
-			);
+                'success',
+                'Your message has been sent',
+                'We will be in touch shortly'
+            );
         }
         else {
             set_message(
-				'error',
-				'Your message could not be sent',
-				'An unknown error occurred.'
-			);
+                'error',
+                'Your message could not be sent',
+                'An unknown error occurred.'
+            );
         }
         
         if ($form['mailinglist'] == '1') {
@@ -129,5 +120,3 @@ function bashMail($sbj, $msg, $to, $cc='', $bc='') {
     $res = count($err) == 0 ? 1 : 4 ;
     return $res;
 }
-
-?>
