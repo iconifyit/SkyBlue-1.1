@@ -103,14 +103,6 @@ function handle_contact_form($mailto) {
                 'An unknown error occurred.'
             );
         }
-        
-        if ($form['mailinglist'] == '1') {
-            bashMail(
-                'Mailing List', 
-                 $form['name'] . " (" . $form['email'] . ") has requested to be added to the mailing list\n", 
-                 $mailto
-           );
-        }
     }
 }
 
