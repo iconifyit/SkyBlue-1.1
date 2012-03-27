@@ -4,8 +4,6 @@ defined('SKYBLUE') or die('Unauthorized file request');
 
 if (empty($data)) return;
 
-global $Router;
-global $Core;
 global $config;
 
 if (the_action() == "send") {
@@ -16,7 +14,7 @@ if (the_action() == "send") {
     <?php echo the_message(); ?>
     <?php 
     echo "<h2>{$config['site_name']}</h2>\n";
-    if ($contact_name = Filter::get($config, 'contact_name', null)) {
+    if ($contact_name = Filter::get($config, 'contact_name')) {
         echo "<h3>{$contact_name}</h3>\n";
     }
     if (check_address($config)) {
