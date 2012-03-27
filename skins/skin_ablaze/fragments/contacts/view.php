@@ -35,7 +35,7 @@ if (the_action() == "send") {
         echo "</address>\n";
     }
     ?>
-    <form action="<?php echo the_form_action(); ?>" method="post" id="emailForm">
+    <form action="" method="post" id="emailForm">
         <fieldset>
             <div class="contact_email_contact">
                 <?php if (count($data) > 1) : ?>
