@@ -1,10 +1,10 @@
 <?php defined('SKYBLUE') or die(basename(__FILE__));
 
 /**
-* @version		1.1 RC1 2008-11-20 21:18:00 $
-* @package		SkyBlueCanvas
-* @copyright	Copyright (C) 2005 - 2008 Scott Edwin Lewis. All rights reserved.
-* @license		GNU/GPL, see COPYING.txt
+* @version        1.1 RC1 2008-11-20 21:18:00 $
+* @package        SkyBlueCanvas
+* @copyright      Copyright (C) 2005 - 2008 Scott Edwin Lewis. All rights reserved.
+* @license        GNU/GPL, see COPYING.txt
 * SkyBlueCanvas is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
 * is derivative of works licensed under the GNU General Public License or
@@ -290,7 +290,7 @@ class media extends manager {
     }
     
     function GetFileType($file) {
-	    return trim(exec('file -bi ' . $file));
+        return trim(exec('file -bi ' . $file));
     }
 
     
@@ -311,8 +311,8 @@ class media extends manager {
     function ViewItems() {
         global $Core;
         
-		$this->styles['formdiv'] = NULL;
-		$this->styles['formtable'] = NULL;
+        $this->styles['formdiv'] = NULL;
+        $this->styles['formtable'] = NULL;
         if (count($this->media) > SB_MAX_LIST_ROWS) {
             $this->styles['formdiv'] = sLIST_OVERFLOW_HEIGHT_STYLE;
             $this->styles['formtable'] = sLIST_OVERFLOW_WIDTH_STYLE;
@@ -348,21 +348,21 @@ class media extends manager {
             
                 $image_name = basename($this->media[$i]);
                 
-				$title = $this->media[$i];
-				if (strpos($title, SB_MEDIA_DIR) !== FALSE) {
-				   $title = str_replace(SB_MEDIA_DIR, NULL, $title);
-				}
-				else if (strpos($title, SB_DOWNLOADS_DIR) !== FALSE) {
-				    $title = str_replace(SB_DOWNLOADS_DIR, NULL, $title);
-				}
-				else if (strpos($title, SB_UPLOADS_DIR) !== FALSE) {
-				    $title = str_replace(SB_UPLOADS_DIR, NULL, $title);
-				}
-				else if (strpos($title, SB_SITE_DATA_DIR) !== FALSE) {
-				   $title = str_replace(SB_SITE_DATA_DIR, NULL, $title);
-				}
+                $title = $this->media[$i];
+                if (strpos($title, SB_MEDIA_DIR) !== FALSE) {
+                   $title = str_replace(SB_MEDIA_DIR, NULL, $title);
+                }
+                else if (strpos($title, SB_DOWNLOADS_DIR) !== FALSE) {
+                    $title = str_replace(SB_DOWNLOADS_DIR, NULL, $title);
+                }
+                else if (strpos($title, SB_UPLOADS_DIR) !== FALSE) {
+                    $title = str_replace(SB_UPLOADS_DIR, NULL, $title);
+                }
+                else if (strpos($title, SB_SITE_DATA_DIR) !== FALSE) {
+                   $title = str_replace(SB_SITE_DATA_DIR, NULL, $title);
+                }
                 
-				$attrs = array('class'=>($i % 2 == 0 ? 'even' : 'odd'));
+                $attrs = array('class'=>($i % 2 == 0 ? 'even' : 'odd'));
                 $tds = $Core->HTML->MakeElement('td', $attrs, $i+1);
                 
                 $cw = '20';
@@ -375,24 +375,24 @@ class media extends manager {
                 )) {
                     $canPreview = false;
                     $icon = FILE_ICON_GIF;
-					$ch = $Core->ImageHeight($icon);
-					$cw = $Core->ImageWidth($icon);
+                    $ch = $Core->ImageHeight($icon);
+                    $cw = $Core->ImageWidth($icon);
                 }
-				
-				$attrs = array(
-					'src'    => $icon,
-					'width'  => '20',
-					'height' => '14',
-					'style'  => 'position: relative; top: 3px;'
-				);
+                
+                $attrs = array(
+                    'src'    => $icon,
+                    'width'  => '20',
+                    'height' => '14',
+                    'style'  => 'position: relative; top: 3px;'
+                );
 
                 if ($canPreview) {
-					$attrs['onmouseover'] = "showtrail(this, '{$this->media[$i]}');";
-					$attrs['onmouseout']  = 'hidetrail();';
-					# $attrs['rel'] = $this->media[$i];
-	            }
-	
-	            $trail = $Core->HTML->MakeElement('img', $attrs, '', 0);
+                    $attrs['onmouseover'] = "showtrail(this, '{$this->media[$i]}');";
+                    $attrs['onmouseout']  = 'hidetrail();';
+                    # $attrs['rel'] = $this->media[$i];
+                }
+    
+                $trail = $Core->HTML->MakeElement('img', $attrs, '', 0);
                 $tds .= $Core->HTML->MakeElement(
                     'td', 
                     array('class'=>($i % 2 == 0 ? 'even' : 'odd')), 
@@ -597,11 +597,11 @@ class media extends manager {
         $br = $count > 1 ? '<br />' : NULL ; 
         
         list($exitCodes, $newFiles) = $Core->UploadMultipleFiles(
-        	$_FILES, 
-        	$_POST['uploadDir'], 
-        	$this->allowedTypes, 
-        	5000000,
-        	$this->targets
+            $_FILES, 
+            $_POST['uploadDir'], 
+            $this->allowedTypes, 
+            5000000,
+            $this->targets
         );
         
         $res = NULL;
