@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" {doc:lang}>
+    <head>
+        <title>[[page.title]]</title>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />     
+        <?php echo $this->get_meta_data(); ?>
+        <link rel="stylesheet" type="text/css" href="<?php echo $this->get_path(); ?>css/ablaze.css" />
+        <!--#plugin.preloader-->
+    </head>
+    <body id="homepage">
+        <!-- header starts here -->
+        <div id="header">
+            <div id="header-content">    
+                <h1 id="logo">[[site.name]]</h1>    
+                <h2 id="slogan">[[site.slogan]]</h2>        
+                <div  id="menu">
+                    <!--#plugin:fragment(menu,view)-->
+                </div>
+            </div>
+        </div>
+                    
+        <!-- content-wrap starts here -->
+        <div id="content-wrap">
+            <div id="content">     
+                <div id="sidebar" >                
+                    <!--#plugin:fragment(sidebar,view)-->         
+                </div>    
+                <div id="main">        
+                    <!--#plugin:fragment(page,view)-->                 
+                </div>            
+            </div>
+        </div>
+        
+        <!-- footer starts here -->    
+        <div id="footer">
+            <div id="footer-content">
+                <div class="col float-left">
+                    Add Your Fragment Here            
+                </div>
+                <div class="col float-left">
+                    Add Your Fragment Here    
+                </div>        
+                <div class="col2 float-right">
+                    <!--#plugin:fragment(footer)-->
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+<!-- Powered by {skyblue:name} {skyblue:version} -->
