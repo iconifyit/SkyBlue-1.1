@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" {doc:lang}>
+    <head>
+        <title>[[page.title]]</title>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />     
+        <?php echo $this->get_meta_data(); ?>
+        <link rel="stylesheet" type="text/css" href="<?php echo $this->get_path(); ?>css/bluepigment.css" />
+        <!--#plugin.preloader-->
+    </head>
+    <body id="homepage">
+        <!-- header starts here -->
+        <div id="header">
+            <div id="header-content">    
+                <h1 id="logo-text"><a href="[[site.url]]" title="">[[site.name]]</a></h1>    
+                <h2 id="slogan">[[site.slogan]]</h2>        
+                <div id="header-links">
+                    <p>
+                        <a href="[[site.url]]">Home</a> | 
+                        <a href="[[site.url]]rss/">RSS</a>            
+                    </p>        
+                </div>    
+            </div>
+        </div>
+        
+        <!-- navigation starts here -->
+        <div id="nav-wrap">
+            <div id="nav">
+                <!--#plugin:fragment(menu,view)-->
+            </div>
+        </div>
+                    
+        <!-- content-wrap starts here -->
+        <div id="content-wrap">
+            <div id="content">     
+                <div id="sidebar" >    
+                    <div class="sep"></div>
+                    <!--#plugin:fragment(sidebar,view)-->
+                </div>    
+                <div id="main">
+                    <!--#plugin:fragment(page,view)-->
+                    <!--#plugin:fragment(contacts,view)-->                
+                </div>            
+            </div>
+        </div>
+    
+        <!-- footer starts here-->        
+        <div id="footer-wrap">
+            <div id="footer-columns">
+                <!--#plugin:fragment(teaser,view)-->
+            </div>    
+            <div id="footer-bottom">        
+                <!--#plugin:fragment(footer,view)-->    
+            </div>    
+        </div>        
+    </body>
+</html>
+<!-- Powered by {skyblue:name} {skyblue:version} -->
