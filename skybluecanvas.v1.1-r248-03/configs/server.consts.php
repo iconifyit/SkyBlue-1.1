@@ -147,7 +147,7 @@ sb_conf('SB_LANGUAGE', 'en-us');
 # change all of the instances where it is being used.
 # ###################################################################################
 
-sb_conf('SB_PROD_NAME',    '&copy; 2008 Scott Lewis. SkyBlueCanvas');
+sb_conf('SB_PROD_NAME',    '&copy; 2012 Scott Lewis. SkyBlueCanvas');
 sb_conf('SB_TAGLINE',      'Point. Click. Publish.');
 sb_conf('SB_VERSION',      '[1.1 r248]');  // Required for legacy support (deprecated)
 sb_conf('SKYBLUE_VERSION', '[1.1 r248]');
