@@ -1,3 +1,5 @@
+NOTE: SkyBlueCanvas was originally written in 2003 and was faithfully maintained until 2012. But alas, time moves on and interests change. The project is no longer being actively maintained but the code is very stable. Feel free to download and use it. I am happy to answer questions about the code from time-to-time but I'm not very focused on the CMS any longer.
+
 # Introduction
 
 SkyBlueCanvas is built for small web sites and non-technical users. The system distills the core concepts of content editing down to their simplest form and eliminates a lot of the complexities associated with larger systems. SkyBlueCanvas is not meant to be all things to all users and is not intended to compete with, but to act as an alternative to more robust systems.
