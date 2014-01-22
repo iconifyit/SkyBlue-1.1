@@ -1,4 +1,4 @@
-NOTE: SkyBlueCanvas was originally written in 2003 and was faithfully maintained until 2012. But alas, time moves on and interests change. The project is no longer being actively maintained but the code is very stable. Feel free to download and use it. I am happy to answer questions about the code from time-to-time but I'm not very focused on the CMS any longer.
+_NOTE: SkyBlueCanvas was originally written in 2003 and was faithfully maintained until 2012. But alas, time moves on and interests change. The project is no longer being actively maintained but the code is very stable. Feel free to download and use it. I am happy to answer questions about the code from time-to-time but I'm not very focused on the CMS any longer._
 
 SkyBlueCanvas Lightweight CMS is an open source, free content management system written in php and built specifically for small web sites. The entire site you are viewing is a demonstration of the SkyBlueCanvas lightweight CMS. SkyBlueCanvas is custom-built for those instances when more robust systems like Joomla, WordPress and Drupal are too much horsepower.
 
