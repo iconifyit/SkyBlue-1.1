@@ -1,9 +1,0 @@
-<p>
-SkyBlueCanvas is happy to announce that a new developer has joined the development team to help with Developer Documentation. Steve Fister, an e-Learning Architect and Web Developer working in New England for TIBCO Software, Inc. headquartered in Palo Alto, CA.
-</p>
-<p>
-Steve has been a professional internet application developer for 15 years, spending most of this time in San Francisco Bay Area. Steve's broad experience in large scale portal development, content management systems, e-learning systems development, and technical writing will bring additional and complimentary skills to the SBC team. 
-</p>
-<p>
-Steve is also an avid fisherman, both salt- and freshwater and finds his Zen place on the waters of the Block Island Sound.
-</p>

@@ -1,6 +1,0 @@
-Installation
-
-1. Copy the /gadgetst_ext/gadgets/ directory to /skyblue_root/managers/
-2. Copy the file plugin.gadgets.php to /skyblue_root/data/plugins.
-
-Enjoy!

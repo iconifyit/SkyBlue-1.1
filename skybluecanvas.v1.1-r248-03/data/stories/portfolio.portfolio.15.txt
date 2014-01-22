@@ -1,2 +1,0 @@
-<h3>DM Theme</h3><p>The DM theme is a versatile, simple and clean  HTML  and  CSS  theme 
-that could be used for virtually any small business or portfolio.</p><p>Learn more at <a href="http://themeforest.net/item/dm-theme-simple-versatile-xhtmlcss-template/81069?ref=skybluecanvas">ThemeForest.net</a></p>

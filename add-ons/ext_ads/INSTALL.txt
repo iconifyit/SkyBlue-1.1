@@ -1,5 +1,0 @@
-Installation Instructions:
-
-- Copy /ext_ads/manager/ads to /your_skyblue_root/managers/
-- Copy /ext_ads/plugin/plugin.ads.php to /your_skyblue_root/data/plugins/
-- Make sure all file permissons are set to 775

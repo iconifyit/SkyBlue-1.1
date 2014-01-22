@@ -1,7 +1,0 @@
-<p>
-SkyBlue Canvas needs some work before it is ready for release so I am aiming for a mid-August Alpha release date. The first official release will be an alpha version to allow other developers to experiment with the system and give me feedback on features, usability and the API.
-</p>
-<p>If you are a seasoned PHP developer, drop me a line via the contact page and I will be happy to send you a copy of the source code. If you are a less experienced
-developer it will take a little longer to have the system available.
-</p>
-            

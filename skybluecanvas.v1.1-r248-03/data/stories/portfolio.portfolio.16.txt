@@ -1,4 +1,0 @@
-<h3>WDE  Crisp / Clean 5   HTML  Design</h3><p>This template is more than just a framework: it contains a highly 
-customized framework. It is best suited for a business,
-company, portfolio site, blog, as well as many more common websites. The
- code is heavily commented for easy navigation</p><p>Learn more at <a href="http://themeforest.net/item/wde-crisp-clean-5-html-design/81490?ref=skybluecanvas">ThemeForest.net</a></p>

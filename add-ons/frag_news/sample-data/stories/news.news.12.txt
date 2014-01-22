@@ -1,3 +1,0 @@
-<p>SkyBlueCanvas v1.0.3.2, with several bug fixes and a couple of new features is now available.</p>
-<p>The bug fixes, of which there are many, are detailed in the CHANGELOG.txt file in the root of the SkyBlueCanvas package download.</p>
-<p>The most noticeable new feature is the Setup Assistant which is loaded on the first run to prompt the site admin to create their Admin Login Account.</p>

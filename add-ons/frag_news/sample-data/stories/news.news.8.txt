@@ -1,3 +1,0 @@
-
-			         <p>SkyBlueCanvas just became more flexible with a new plugin API. In fact, there are two plugin APIs. A traditional Observer Pattern call method and an inline call method.</p><p>For a more detailed overview, please visit the Plugin API page at <a title="Link to http://www.skybluecanvas.com/Plugin-API-pg-12.htm" href="http://www.skybluecanvas.com/Plugin-API-pg-12.htm">www.skybluecanvas.com/Plugin-API-pg-12.htm</a></p>
-			         			    			    

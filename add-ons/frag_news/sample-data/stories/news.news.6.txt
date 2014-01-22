@@ -1,3 +1,0 @@
-
-        <p>We have completed an initial alpha implementation of HTML Tidy with SkyBlue Canvas. The integration of these two great systems means that creating standards-compliant XHTML web sites is now easier than ever.</p><p>The integration of HTML Tidy and SkyBlue Canvas requires that your hosting server have HTML Tidy installed or that you be able to install the package.</p><p>We hope make the new feature available to the general public in Summer 2007. We will still need to do a lot of testing but this new feature will be a great tool for those who want to make sure their website is compliant with the W3C Web Standards.</p>
-                

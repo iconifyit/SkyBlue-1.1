@@ -1,3 +1,0 @@
-<p>Donec condimentum ultrices mi, ac tincidunt dolor feugiat vel.
-Vestibulum semper, sapien ut hendrerit mattis, nunc diam placerat
-nulla, eu elementum ipsum ante ut risus.</p>

@@ -1,1 +1,0 @@
-<h2 class="heading-lg">Legal</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec risus sem, malesuada sed, consequat in, interdum sit amet, odio. Praesent auctor mi at diam. Donec vehicula facilisis nulla. Suspendisse ut mi id mi molestie lobortis. Praesent rutrum dui quis diam. Suspendisse non nisi ut lorem posuere pretium.</p><p>© 2010 Orange Studios</p>
