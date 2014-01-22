@@ -107,7 +107,8 @@ function handle_contact_form($mailto) {
 }
 
 function bashMail($sbj, $msg, $to, $cc='', $bc='') {
-    $cmd = 'echo "'.$msg.'" | mail -s "'.$sbj.'" '.$to;
+    // Thanks to Scott Parish for suggesting the fix below.
+    $cmd = "echo '".escapeshellcmd($msg)."' | mail -s '".escapeshellcmd($sbj)."' '".escapeshellcmd($to)."'";
     exec($cmd, $err);
     $res = count($err) == 0 ? 1 : 4 ;
     return $res;
