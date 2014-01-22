@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<obj type="menus">
+<item id="1"
+      title="Main Menu"
+      menutype="horizontal"
+      showtitle="0"
+      order="">
+</item>
+
+<item id="2"
+      title="Top Menu"
+      menutype="horizontal"
+      showtitle="0"
+      order="">
+</item>
+
+<item id="3"
+      title="Test Menu 2"
+      menutype="vertical"
+      showtitle="0"
+      order="">
+</item>
+
+	</obj>
+</root>

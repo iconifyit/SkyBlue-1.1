@@ -1,0 +1,73 @@
+<h2 class="heading-lg">SkyBlueCanvas v1.1 Beta Updates</h2><p>
+We had planned an incremental release numbered vBeta 1.1 but after a 
+lot of bug fixes and adding several new features, we decided that 
+this release merited a minor release number. A lot of work went into 
+improving the over-all usability of SkyBlueCanvas in this release. 
+We also fixed a lot of bugs that had previously escaped our attention.
+</p><h3 class="heading-lg">Data Integrity</h3><p>
+The changes in v1.1 will not affect your existing data at all. 
+We did not make any changes to the data storage. There were 
+changes to the logic in a few of the plugins and modules but 
+these changes should not impact the display of the plugin 
+or module output.
+</p><h3 class="heading-lg">New SkyBlueCanvas Features</h3><p>
+The most visible change in SkyBlueCanvas v1.1 is to the Page Manager including the ability to publish Collections from from the page level rather than a separate manager. 
+The new Page Manager has three tabs: Article Text, Meta Data and 
+Collections. When you create or edit a page, you can now select 
+the collections to appear on that page and the region in which each 
+collection should appear. This is a much more intuitive approach. 
+We have, however, kept the Collections Publishing Manager in place 
+for the time-being so the impact of the change will be less drastic.
+</p><p>
+The Page Manager also includes a Meta Description field for better 
+seach engine optimization. You can still create Meta Groups and 
+apply them to multiple pages but the meta data that is logically 
+part of a single page is now included in the Page Manager.
+</p><p>
+The Page Manager, as well as many other Managers now has the ability 
+to re-order items from the default list view so you do not need to 
+open the editor to change the order of an item. Simply use the up 
+and down arrows in the list view.
+</p><p>
+We also updated WYMeditor, the XHTML Editor in SkyBlueCanvas 
+to WYMeditor v0.5.
+</p><p>
+We also added the ability to publish and un-publish pages and other 
+items from the default list view with a single button click. In addition, 
+you can now enable and disable plugins, gadgets, banner ads and site 
+metrics with the click of a button.
+</p><p>
+You can now add page-specific JavaScript files to your skins. For instance, 
+if you have a layout skin named skin.alternate.html, you can add a JavaScript 
+file that only loads on this page by creating a file named 
+skin.alternate.js in /skyblue_root/data/skins/your_skin/js/.
+</p><p>
+We added improvements to the plugin code for class-based plugins. 
+The code previously would create a new instance of the class for 
+each invocation of the plugin within a page.  We changed the code 
+to keep track of the plugin classes on a page and only instantiates 
+them once. This saves overhead and allows the constructor to be used 
+to initialize (or load from files/DB) data that is used in subsequent 
+invocations. This may break existing class based plugins but this 
+memory-management was a necessary change.
+</p><p>
+We also added a new Banner Ads Manager so you can place banner ads 
+through the Admin Console. Previously banner ads were required to 
+be added via FTP only.
+</p><h3 class="heading-lg">For Developers</h3><p>
+SkyBlueCanvas has several major changes to the code that will interest 
+developers. We added 3 new classes to the <acronym title="Object Oriented Programming">OOP</acronym> hierarchy: SkyBlueObject, 
+Observer and SkyBlueError. These classes add some default shared 
+functionality in getters and setters and most importantly add support 
+for custom events using the Observer Pattern. We will provide full 
+documentation for using custom events and the other new classes as 
+soon as possible.
+</p><p>
+Developers will also notice that we have done a lot of clean-up on 
+the code by moving a lot of fuctionality that was previously built 
+into the system core into external plugins. Future releases of 
+SkyBlueCanvas will do even more in this area to help lighten 
+the base code even more.
+</p><h3 class="heading-lg">How To Upgrade From Previous Versions of SkyBlueCanvas</h3><p>
+The upgrade instructions can be found on the <a href="http://blog.skybluecanvas.com/skybluecanvas-lightweight-cms/upgrading-skybluecanvas/">SkyBlueCanvas Blog</a>.
+</p>

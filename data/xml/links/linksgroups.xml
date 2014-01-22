@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+<obj type="linksgroups">
+<item id="1"
+      name="Resources"
+      objtype="linkgsgroups">
+</item>
+
+<item id="2"
+      name="Friends"
+      objtype="linkgsgroups">
+</item>
+
+<item id="3"
+      name="Case Studies"
+      objtype="linkgsgroups">
+</item>
+
+
+</obj>
+</root>

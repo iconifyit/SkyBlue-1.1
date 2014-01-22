@@ -1,0 +1,44 @@
+<input type="hidden" name="id" value="{OBJ:ID}" />
+<input type="hidden" name="objtype" value="faqs" />
+<tr>
+    <td valign="top">Short Name:</td>
+    <td valign="top">
+        <input type="text" 
+               name="name" 
+               value="{OBJ:NAME}" 
+               size="45" 
+               />
+    </td>
+</tr><tr>
+    <td valign="top">Question:</td>
+    <td valign="top">
+        <textarea name="question" 
+                  cols="44" 
+                  rows="3">{OBJ:QUESTION}</textarea>
+    </td>
+</tr>
+<tr>
+    <td valign="top">Answer:</td>
+    <td valign="top">
+		<div id="editoranchor"></div>
+		<div style="margin: -4px 1px 4px 4px; width: 99%;">
+		 <textarea name="answer" 
+                  cols="44" 
+				  class="wymeditor"
+				  id="story_content"
+                  rows="6">{OBJ:ANSWER}</textarea>
+		</div>
+    </td>
+</tr>
+<tr>
+    <td valign="top">FAQ Group:</td>
+    <td valign="top">
+        {OBJ:GROUP}
+    </td>
+</tr>
+<tr>
+    <td>[TERM:ORDER]:</td>
+    <td>
+        {OBJ:ORDER}
+    </td>
+</tr>

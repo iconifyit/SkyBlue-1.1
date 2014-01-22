@@ -1,0 +1,1 @@
+<p>[[page.redirect(admin.php)]]</p>

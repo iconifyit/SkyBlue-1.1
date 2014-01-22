@@ -1,0 +1,5 @@
+<h3>Whitewall HTML DESIGN 6-in-1</h3><p>This template is more than just a framework: it contains a highly 
+customized, in-depth Colobox framework. It is best suited for a 
+business,
+company, portfolio site, blog, as well as many more common websites. The
+ code is heavily commented for easy navigation</p><p>Learn more at <a href="http://themeforest.net/item/whitewall-html-design-6in1/70844?ref=skybluecanvas">ThemeForest.net</a></p>

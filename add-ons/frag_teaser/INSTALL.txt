@@ -1,0 +1,21 @@
+Installation Instructions:
+
+- Copy /frag_teaser/manager/teaser to /your_skyblue_root/managers/
+- Copy /frag_teaser/teaser to /your_skyblue_root/data/skins/your_skin/fragments/
+- Copy /frag_teaser/sample-data/xml/* to /your_skyblue_root/data/xml/
+- Copy /frag_teaser/sample-data/stories/* to /your_skyblue_root/data/stories/
+- Make sure all file permissons are set to 775
+
+There are two ways you can load the fragment in a page:
+
+HTML Template Page Region Comment:
+
+- Add the following code to the region of the page where the teaser is to appear:
+
+<!--#plugin:fragments(teaser,view)-->
+
+In-Text Method:
+
+- Add the following code to the body of the text using the WYSIWYG editor in the Page Manager
+
+{plugin:fragment(teaser,view)}

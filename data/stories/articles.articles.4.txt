@@ -1,0 +1,65 @@
+<p>Two of my favorite features in SkyBlueCanvas are the Gadgets Plugin and what I call SynApps (syndicated   applicatoins). With these two features, the possibilities of what you can do with your SkyBlueCanvas site are almost limitless.</p>
+
+{gadget:YouTube}
+
+<h2>Google Gadgets<br /></h2>
+<p>
+The Gadget above is an example of the SkyBlueCanvas Gadget Plugin. You can easily include Google Gadgets in your site with the following procedure.
+</p>
+
+
+<p>
+First go to <a title="Link to http://www.google.com/ig/directory?synd=open" href="http://www.google.com/ig/directory?synd=open">Google's Gadgets Page</a> and get the code (JavaScript) for the Gadget(s) you want to add to your site. There are only two steps in the process so just follow the prompts on Google's page.
+</p>
+
+
+<p>Next, log into your admin account and go to Admin &gt; Collections
+&gt; Gadgets. Create a new Gadget by clicking the Add button and give your gadget a name. Be sure to
+use a name that is safe for a file name since SkyBlueCanvas will use
+this name to create a gadget file in your data directory.
+</p>
+
+<p>
+Next, paste the Gadget code you copied from Google's site in the textarea provided in SkyBlueCanvas's Gadgets Manager and click Save. </p>
+
+<p>
+To display the Gadget on your site, simply include a token in your page text like the example below.
+</p>
+
+<pre>{ gadget : gadgetName }
+</pre> 
+
+<p>
+If you want to include a Gadget directly in your Skin HTML, you can do that also by including a comment token like the example below. The Gadget Plugin will replace these tokens with the Gadget code corresponding to gadgetName.
+</p>
+<pre>&lt;-- #gadget : gadgetName --&gt;
+</pre> 
+
+{plugin:loadapp(newsletter)}
+
+<h2>SkyBlueCanvas SynApps</h2>
+<p>
+The Newsletter Signup form above is an example of the SkyBlueCanvas SynApps feature. SynApps allow you to include stand-alone web applications in-line on your site. The purpose of SynApps is to allow you to use web apps that are completely ignorant of the SkyBlueCanvas API to extend your web site without limits.
+</p>
+<p>
+You have two options for loading in-line apps in SkyBlueCanvas. The first option is to upload your web app to /skyblue/data/apps/appname/ and include a token like the one in the following example, directly in your page text. SkyBlueCanvas will replace the token with an iFrame linked to your app for you.
+</p>
+
+<pre>{ plugin : loadapp (appName) }
+</pre>
+
+<p>
+Applications you want to include inline in your site do not need to be uploaded to your web server, however. SkyBlueCanvas can link to any web app anywhere using a token like like the following example.
+</p>
+
+<pre>{ plugin : loadapp (http://www.somedomain.com/appname/) }
+</pre>
+
+<p>
+SkyBlueCanvas is designed to be lightweight and very easy to use. But lightweight and simple do not mean simplistic. The two features demonstrated above are examples of how flexible the SkyBlueCanvas Lightweight CMS is. By leaving out a lot of robust functionality, but including a very Flexible plugin API, SkyBlueCanvas is versatile without a lot of overhead.
+</p>
+
+<p>
+Scott Lewis<br />
+SkyBlueCanvas Developer
+</p>

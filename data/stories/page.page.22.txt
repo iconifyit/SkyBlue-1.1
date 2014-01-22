@@ -1,0 +1,1 @@
+<h2 class="heading-lg">Search Results</h2><p>{plugin:fragment(search,results)}</p>

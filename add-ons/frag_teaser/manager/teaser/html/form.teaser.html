@@ -1,0 +1,34 @@
+<input id="id" type="hidden" name="id" value="{OBJ:ID}" />
+<input id="objtype" type="hidden" name="objtype" value="teaser" />
+<tr>
+    <th valign="top">Name:</th>
+    <td valign="top">
+        <input type="text" 
+               name="name" 
+               value="{OBJ:NAME}" 
+               size="57" 
+               />
+    </td>
+</tr>
+<tr>
+    <th valign="top">Teaser Text:</th>
+    <td colspan="4">
+        <textarea id="intro" 
+                  name="intro" 
+                  cols="55" 
+                  rows="22" 
+                  style="font-family: monotype;">{OBJ:INTRO}</textarea>
+    </td>
+</tr>
+<tr>
+    <th valign="top">Link To:</th>
+    <td valign="top">
+        {OBJ:LINK}
+    </td>
+</tr>
+<tr>
+    <th>Order:</th>
+    <td>
+        {OBJ:ORDER}
+    </td>
+</tr>

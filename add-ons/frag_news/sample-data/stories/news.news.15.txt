@@ -1,0 +1,1 @@
+<p>The updated MenuBuilder module is a cleaned-up version of the menu module. The IE-specific JavaScript code to support the :hover pseudo-class on arbitrary elements has been removed and the code greatly simplified. It is recommended that you update your system with this new version.</p>

@@ -1,0 +1,9 @@
+<p>
+SkyBlueCanvas is happy to announce that a new developer has joined the development team. Todd Crowe, formerly a developer for NetScape and AOL will be joining the team to help with the PHP architecture and programming.
+</p>
+<p>
+Todd is a website developer living on the Oregon Coast. He has been writing software professionally for over 15 years.  Todd's diverse background in developing operating systems, desktop applications, and large scale web software brings a broad range of skills and experience to the project.
+</p>
+<p>
+I am excited to have Todd join the team and he and I both look forward to working to make SkyBlueCanvas a great lightweight content management solution.
+</p>

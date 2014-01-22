@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+<obj type="myvars">
+<item id="2"
+      objtype="myvars"
+      name="Zm9vYmFy"
+      value="Rm9vIEJhciBCYXo="
+      var_type="variable">
+</item>
+
+<item id="3"
+      objtype="myvars"
+      name="L1NreUJsdWVDYW52YXMgTGlnaHR3ZWlnaHQgQ01TL2k="
+      value="U0JDIENNUw=="
+      var_type="regex">
+</item>
+
+<item id="4"
+      objtype="myvars"
+      name="T3BlbiBTb3VyY2UgYW5kIEZyZWUgU29mdHdhcmU="
+      value="T3BlbiBTb3VyY2UgU29mdHdhcmU="
+      var_type="string">
+</item>
+
+<item id="5"
+      objtype="myvars"
+      name="L1swLTldezN9LVswLTldezR9Lw=="
+      value="KDU1NSkgJDA="
+      var_type="regex">
+</item>
+
+</obj>
+</root>

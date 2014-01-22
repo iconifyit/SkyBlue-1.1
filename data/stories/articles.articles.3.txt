@@ -1,0 +1,243 @@
+<div class="warning">
+<p>
+SkyBlueCanvas has many very useful features built into the code. It will behoove you for the purposes of this series of articles and for developing SkyBlueCanvas extensions to become familiar with the following three classes:
+</p>
+
+<ul>
+    <li>/skybluecanvas/includes/core.php</li>
+    <li>/skybluecanvas/includes/manager.class.php</li>
+    <li>/skybluecanvas/includes/factory.html.php</li>
+</ul>
+</div>
+<br />
+<p>
+<strong>TIP:</strong> Whenever I build a new Manager for SkyBlueCanvas, I almost always start with a Manager I have already written - no need to re-invent the wheel as they say. I will select which Manager to begin with based on its similarity to the Manager I wish to build.
+</p>
+
+<h3>Let's Begin</h3>
+<p>
+The first step in developing a SkyBlueCanvas Manager is to define the objects which we will be manipulating. For this tutorial we will use the generic Item object. We must first define the properties that an object of the Item Class has:
+</p>
+
+<h4>Item Properties</h4>
+<ul>
+    <li>Unique Identifier or ID</li>
+    <li>Name</li><li>
+    </li><li>Description</li>
+</ul>
+<br />
+<p>
+In order to create or edit any data object, we need an HTML Form to collect user input, the PHP class to manipulate the object in memory based on user input, and an XML object to store the description of the Item and Group.
+</p>
+
+<p>
+A very helpful idea to embrace is that whether we are defining an object using PHP syntax, XML syntax or HTML syntax, in all three languages we are doing the same thing - describing the structure and values of the object. So each of the following describe the Item object for the purposes of Interacting with the Administrator, Manipulating or interacting with the data, and Storing the data object respectively.
+</p>
+
+<pre>
+&lt;form&gt;
+    &lt;input type="hidden" name="id" value="$id" /&gt;
+    &lt;input type="text" name="name" value="$name" /&gt;
+    &lt;textarea name="name"&gt;$description&lt;/textarea&gt;
+&lt;/form&gt;
+
+&lt;?php
+class Item
+{
+    var $id;
+    var $name;
+    var $description;
+    
+    // functions
+}
+?&gt;
+
+&lt;xml&gt;
+&lt;root&gt;
+  &lt;object&gt;
+  &lt;item id="$id" 
+        name="$name"
+        description="$description"&gt;
+  &lt;/item&gt;
+  &lt;/object&gt;
+&lt;/root&gt;
+</pre>
+<br />
+<p>
+In the code above, you will notice that I have used the variable names as the values for each of the HTML and XML field names to demonstrate the relationship between each of the three representations of the Item Object.
+</p>
+<p>
+The Item Manager allows you to create and edit objects of the Item class. The functions or <em>methods</em> in the class capture and prepare the user-entered property values for storage. The PHP Item Class is an intermediary between the storage object and the GUI or form object.
+</p>
+
+<p>
+When the administrator of the site creates or updates the object, the object is transformed from an HTML description, to a PHP description to an XML description. When a visitor to the site requests to view the object, the object is transformed from XML, to PHP, then to HTML again.
+</p>
+
+<h3>The HTML Form</h3>
+<p>
+The form used to edit our Item object might look something like this in SkyBlueCanvas:
+</p>
+
+<pre>
+&lt;form&gt;
+    &lt;input type="hidden" name="id" value="{OBJ:ID}" /&gt;
+    &lt;label&gt;Name&lt;/label&gt;
+    &lt;input type="text" name="name" value="{OBJ:NAME}" /&gt;
+    &lt;label&gt;Description&lt;/label&gt;
+    &lt;textarea name="description"&gt;{OBJ:DESCRIPTION}&lt;/textarea&gt;
+&lt;/form&gt;
+</pre>
+<br />
+
+<p>
+The first thing you may notice about the form above is the {OBJ:NAME} type tokens in the value attribute of each input. This is a convention used in SkyBlueCanvas to indicate to the Manager class that a property value from the Item Object is going to be inserted there. This will be explained in more detail a little later in this article.
+</p>
+
+<h3>The PHP Object</h3>
+<p>
+For simple SkyBlueCanvas Managers, most of the functionality needed is built into the Abstract Manager Class. The Abstract Manager Class does not define or operate on any specific object - this is why we refer to it as abstract. It, in essence, describes those properties and methods that apply to <em>all</em> objects. This includes properties such as object type, unique identifier, data storage location and HTML form location. It also includes methods such as loading an object from storage, creating a unique identifier, saving an object, deleting an object or creating a new object.
+</p>
+
+<p>
+It is possible to create a SkyBlueCanvas Manager by writing only three functions. The functions that you will always have to write for your SkyBlueCanvas Manager are InitObjTypes(), InitProps(), and InitEditor().
+</p>
+
+<p>
+The InitObjTypes() function tells the Manager class the object types with which it will be working. In this case there is only one - an object of type item. You indicate the object type(s) by including the following function in your manager code:
+</p>
+
+<pre>
+function InitObjTypes()
+{
+    $this-&gt;SetProp('objtypes', array('item'));
+}
+</pre>
+<br />
+
+<p>
+The InitProps() function tells the Manager Class what columns and tasks to include in the List View of your stored objects. You indicate these properties by including the following function in your manager code:
+</p>
+
+<pre>
+function InitProps() 
+{
+    $this-&gt;SetProp('headings', array('Name', 'Tasks'));
+    $this-&gt;SetProp('tasks',    array('edit', 'delete'));
+}
+</pre>
+<br />
+
+<p>
+ The InitEditor() function is where the XML stored object, PHP object and HTML form object meet so to speak. The Abstract Manager Class will merge any existing object values contained in the XML stored object, with the HTML Form object so that the user can manipulate the object property values.
+</p>
+
+<p>
+In our example of the Item object, the InitEditor() function might look like this:
+</p>
+
+<pre>
+function InitEditor() 
+{
+    global $Core;
+    
+    // Set the form message
+    
+    $this-&gt;SetFormMessage('name', 'Item');
+    
+    // Initialize the object properties to empty strings or
+    // the properties of the object being edited
+    
+    $_OBJ = $this-&gt;InitObjProps($this-&gt;skin, $this-&gt;obj);
+    
+    // This step creates a $form array to pass to buildForm().
+    // buildForm() merges the $obj properites with the form HTML.
+
+    $form['ID']          = $this-&gt;GetItemID($_OBJ);
+    $form['NAME']        = $this-&gt;GetObjProp($_OBJ, 'name');
+    $form['DESCRIPTION'] = $this-&gt;GetObjProp($_OBJ, 'description');
+
+    $this-&gt;BuildForm($form);
+}
+</pre>
+<br />
+
+<p>
+I will quickly go through this function line-by-line so that you will have a solid understanding of how it works.
+</p>
+
+<p>
+First, the SetFormMessage($key, $value), function sets the header that appears above the form. It will either contain text that tells which stored object is being manipulated or that a new object is being created. It might say something like: <strong>New Item (ID: 3)</strong> or <strong>Foo Bar Item (ID:1)</strong>, indicating that we are editing an Item named Foo Bar that was previously created.
+</p>
+
+<p>
+The first argument required by the function is the object property to use in the header if we are manipulating an existing object. The second argument is the text to use if we are creating a new object. Using the examples from the previous paragraph, the Manager Class would look at the item object and find the value 'Foo Bar' in the name property for an existing object. If it does not find an existing value, it will use 'New Item' instead.
+</p>
+
+<p>
+Next, you will notice the line that reads:
+</p>
+
+<pre>$_OBJ = $this-&gt;InitObjProps($this-&gt;skin, $this-&gt;obj);
+</pre>
+<br />
+
+<p>
+This function, defined in the Abstract Manager Class, merges the stored object (if there is one) with the {OBJ:PROPERTY} tokens we placed in the HTML Form. Its arguments are the 'skin' or HTML Form, and the specific object being edited. Keep in mind that creating and editing are the same thing only that creating is editing an object that has no previously-defined values.
+</p>
+
+<p>
+You do not need to tell the Manager Class where to find the HTML form. All Managers have the same directory and file structure precisely so that the Manager Class will know where it is supposed to look for the HTML Form.
+</p>
+
+<p>
+Next, you will notice the $form array whose keys correspond precisely to each of the property names of the Item object as well as to the field or input names of the HTML Form. We are retrieving the property values, either previously defined and saved in the XML object description, or empty values, and creating an associative array of key value pairs that will be merged with the HTML Form when we call:
+</p>
+
+<pre>
+$this-&gt;BuildForm($form);
+</pre>
+<br />
+
+<p>
+The right side of our assignment operator (i.e., $form[KEY] = $value), is typically a function call that retrieves and formats the property value in a form that can be represented in HTML. This value may be a string value or one or more options in a select list or group of checkboxes. Many of the functions that will be used in these instances are pre-defined in the Abstract Manager Class. For instance: 
+</p>
+
+<pre>
+$this-&gt;GetObjProp($_OBJ, 'property_name');
+</pre>
+<br />
+
+<p>
+is defined by the Abstract Manager Class and searches the $_OBJ array for the property or field indicated by the second argument. If the property does not exist, an empty string is returned.
+</p>
+
+<p>
+The Abstract Manager Class also handles assigning a unique identifier for you by calling:
+</p>
+
+<pre>
+$this-&gt;GetItemID($_OBJ);
+</pre>
+<br />
+
+<h3>The XML Storage Object</h3>
+<p>
+When the user submits the HTML Form back to the Manger, the PHP class captures the administrator-defined property values and performs tasks such as validating that the necessary input was provided, transforms the data into XML, then writes the XML storage object to the data source - in most cases objectType.xml (e.g., item.xml)
+</p>
+
+<p>
+The XML storage object is almost a mirror of the HTML Form object.
+</p>
+
+<p><strong>NOTE:</strong>
+The design of XML objects in SkyBlueCanvas is not an optimal design. I fully recognize this but in my defense, this design is a remnant from the very early days of SkyBlueCanvas and though not the best design, is adequate for its purpose.
+</p>
+
+<p>
+In this article we explained how an Item object is created, edited and saved. I refer to managers like the one above as a one-dimensional manager because the manager only operates on a single object type. It is possible to create multi-dimensional managers in SkyBlueCanvas and that will be the topic of the next article in this series.
+</p>
+<p>
+Scott Lewis<br />
+SkyBlueCanvas Developer
+</p>

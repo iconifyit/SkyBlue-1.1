@@ -1,0 +1,103 @@
+<link rel="stylesheet" type="text/css" href="managers/forms/css/forms.css" />
+<script type="text/javascript" src="managers/forms/js/forms.js"></script>
+<input type="hidden" name="id" value="{OBJ:ID}" />
+<input type="hidden" name="objtype" value="{OBJ:OBJTYPE}" />
+
+<tr>
+	<td colspan="2">
+		<div id="top">
+		    <p><a href="#title" class="scrollTo">Title</a> | 
+		       <a href="#blurb" class="scrollTo">Blurb</a> | 
+		       <a href="#callback" class="scrollTo">Plugin</a> | 
+		       <a href="#recepients" class="scrollTo">Recepients</a> | 
+		       <a href="#response" class="scrollTo">Auto-Response</a> | 
+		       <a href="#cssid" class="scrollTo">CSS ID</a> | 
+		       <a href="#tokens" class="scrollTo">Fragment Token</a>
+		    </p>
+			<fieldset id="title">
+				<label>Title:  <a href="#container" class="scrollTo">Top</a></label>
+				<input type="text" name="title" value="{OBJ:TITLE}" size="45" />
+			</fieldset>
+			<fieldset>
+				<label>Show Title?</label>
+				<!-- Yes | No -->
+        		{OBJ:SHOWTITLE}
+			</fieldset>
+			<fieldset id="blurb">
+				<label>Blurb: <a href="#container" class="scrollTo">Top</a></label>
+				<textarea name="blurb" cols="43" rows="6">{OBJ:BLURB}</textarea>
+				<div class="explanation">
+				<p>Enter a paragraph to explain the form to site users. Leave this field blank 
+                if you do not want a blurb to appear on the site.</p>
+                </div>
+			</fieldset>
+			<fieldset id="callback">
+				<label>Plugin Callback Event: <a href="#container" class="scrollTo">Top</a></label>
+	    		<p><strong>{OBJ:CALLBACK_EVENT}</strong></p>
+	    		<input type="hidden" name="callback_event" value="{OBJ:CALLBACK_EVENT}" />
+	    		<div class="explanation">
+				<p>
+				  Posted forms are processed by SkyBlueCanvas plugins. To define a callback to process your form, 
+				  create a new plugin using the Plugin Manager. SBC will automatically pass 
+				  the Request Object containing the POST data, the Form Object and an array of the Field 
+				  Objects for this form as arguments to your plugin an array like:
+				</p>
+				<p>
+<pre>
+/*
+* array(
+*    'request' => RequestObject, 
+*    'form'    => FormObject, 
+*    'fields'  => array(FieldObject1, FieldObject2, ...)
+* )
+*/
+</pre>
+				</p>
+				</div>
+			</fieldset>
+			<fieldset id="recepients">
+				<label>Recepient(s): <a href="#container" class="scrollTo">Top</a></label>
+				<textarea name="contact" cols="43" rows="6">{OBJ:CONTACT}</textarea>
+				<div class="explanation">
+				<p>
+				If this form response is being emailed, enter recepient&#39;s email address below. 
+				To specify multiple recepients, enter email addresses separated by a comma.
+				</p>
+				</div>
+			</fieldset>
+			<fieldset id="response">
+				<label>Auto Response: <a href="#container" class="scrollTo">Top</a></label>
+				<textarea name="autoresponse" cols="43" rows="6">{OBJ:AUTORESPONSE}</textarea>
+				<div class="explanation">
+					Use this field to create an auto-response message to send to the user when the form is 
+        			submitted. Your form must also include a field named *email* in order 
+        			to send a response to the site visitor. 
+				</div>
+			</fieldset>
+			<fieldset id="cssid">
+				<label>CSS ID: <a href="#container" class="scrollTo">Top</a></label>
+				<p><strong>#form_id_{OBJ:ID}</strong></p>
+				<input type="hidden" name="cssid" value="form_id_{OBJ:ID}" size="45" />
+			</fieldset>
+			<fieldset id="tokens">
+				<label>Fragment Tokens <a href="#container" class="scrollTo">Top</a></label>
+				<fieldset>
+					<label>Fragment Body Token</label>
+					<p><strong>{plugin:fragment(forms,view,{OBJ:ID})}</strong></p>
+					<div class="explanation">
+						To load this form into a your page text, simply copy this token and 
+						paste it directly into the page text.
+					</div>
+				</fieldset>
+				<fieldset>
+					<label>Fragment Head Token</label>
+					<p><strong>{plugin:fragment(forms,head,{OBJ:ID})}</strong></p>
+					<div class="explanation">
+						Copy this token and paste it between the &lt;head&gt; and &lt;/head&gt; 
+						tags in your template.
+					</div>
+				</fieldset>
+			</div>
+		</div>
+    </td>
+</tr>

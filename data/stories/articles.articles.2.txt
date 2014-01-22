@@ -1,0 +1,68 @@
+<p>
+SkyBlueCanvas Lightweight CMS comes with the ability to easily display banner ads on your site. This is achieved via the Plugin API and the ads plugin that comes with the SkyBlueCanvas source code.
+</p>
+
+<h2>Defining Ad Regions</h2>
+
+<p>
+Ad regions are defined using a specially-formatted commment in the HTML Skin of your site. An example from my own site is:
+</p>
+<pre>&lt;!--#ads:main-top--&gt;
+</pre>
+<p>
+When the ads plugin loads, SkyBlueCanvas passes the page HTML to the plugin call which looks like this:
+</p>
+
+<pre>plgLoadAds($html);
+</pre>
+
+<p>
+The ads plugin parses all comments that are formatted as above and determines the region. In this case 'main-top'. As the plugin encounters each token, it then looks in /skyblue/data/ads/ for any files whose names match the region specified in the token. You can have an unlimited number of ads for each region and the ads plugin will display them randomly.
+</p>
+
+<h2>Saving Your Ads</h2>
+
+<div class="info">
+<p>
+NOTE: In order to upload ads to your site, you will need FTP access.
+</p>
+</div>
+
+<p>
+Ads are saved as text files in /skyblue/data/ads/. It doesn't matter if your ad is a JavaScript or HTML block. SkyBlueCanvas sends whatever is stored in the ad file to the browser and lets the browser determine how it should be displayed. Since the ads are saved as text, there is no code execution that takes place on the server, so you do not need to worry about malicious code - at least on the server side.
+</p>
+
+<h2>Naming Your Ad Files</h2>
+<p>
+SkyBlueCanvas matches the file to the region in which it is to be displayed based on the file name. You can name your regions anything you like, as long as your ad file names match the region names you defined.
+</p>
+<p>
+For example, if I have defined a region 'main-top', then I would include the following token in my HTML skin:
+</p>
+
+<pre>&lt;!--#ads:main-top--&gt;
+</pre>
+
+<p>
+Then, I would save my add files with names like this:
+</p>
+<ul>
+<li>main-top.skypead.txt</li>
+<li>main-top.yahoo.txt</li>
+<li>main-top.googleads.txt</li>
+</ul>
+
+<h2>Styling Your Ad Blocks</h2>
+<p>
+Each ad block is wrapped in a div with a unique ID to allow you to create CSS rules corresponding to each ad block.
+</p>
+<p>
+Using the example above, the ad block wrapper would look like this:
+</p>
+<pre>&lt;div id="ads-main-top"&gt;
+    &lt;!-- the ad code here --&gt;
+&lt;/div&gt;
+</pre>
+
+
+

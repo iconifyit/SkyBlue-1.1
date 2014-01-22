@@ -1,0 +1,60 @@
+<input type="hidden" name="id" value="{OBJ:ID}" />
+<input type="hidden" name="objtype" value="settings" />
+<input type="hidden" name="referrer" value="{OBJ:REFERRER}" />
+
+<tr>
+    <td valign="top">Navigation:</td>
+    <td valign="top">
+        {OBJ:NAVIGATION}
+    </td>
+</tr>
+
+<tr>
+    <td valign="top">Thumbs Cols:</td>
+    <td valign="top">
+        <input type="text" name="thumbcols" value="{OBJ:THUMBCOLS}" size="5" />
+        <p>
+            Thumbs Cols specifies the number of thumbnail columns to use
+            with the thumbnail navigator table.
+        </p>
+    </td>
+</tr>
+
+<tr>
+    <td valign="top">Skin:</td>
+    <td valign="top">
+        {OBJ:SKIN}
+    </td>
+</tr>
+
+<!--
+<tr>
+    <td valign="top">Description:</td>
+    <td valign="top">
+        <textarea name="description" cols="44" rows="5">{OBJ:DESCRIPTION}</textarea>
+        <p>
+            If you enter a description here, it will appear on the first page
+            of the portfolio which displays thumbnails of all categories.
+        </p>
+    </td>
+</tr>
+-->
+
+<tr>
+    <td valign="top" 
+        colspan="2" 
+        style="border-bottom:none;">Description: (This will appear on the first page of your gallery if your module supports a splash page)</td>
+</tr>
+<tr>
+    <td valign="top" 
+        colspan="2"
+        style="padding:0px;">
+        <div id="editoranchor"></div>
+        <input type="hidden" id="storyfile" name="story" value="{OBJ:STORY}" />
+        <textarea name="description" 
+                  cols="44" 
+                  rows="5"
+                  id="story_content"></textarea>
+        <!--{x:DESCRIPTION}-->
+    </td>
+</tr>

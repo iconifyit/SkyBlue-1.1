@@ -1,0 +1,3 @@
+<p>An updated version of the Latest News module is available for download. This version fixes a bug in which items whose status has been set to 'Unublished' in Admin &gt; Collections &gt; News were still being displayed on the public site.</p>
+
+<h2 class="center"><a href="http://skybluecanvas.googlecode.com/files/mod.news.July.10.2008.zip">Download</a></h2>

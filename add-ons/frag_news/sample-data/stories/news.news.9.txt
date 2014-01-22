@@ -1,0 +1,21 @@
+
+			         			    <p>
+Scott Lewis, an independent developer located in Richmond, Virginia has announced the official release of SkyBlueCanvas v1.0, a lightweight, zero-configuration content management system (CMS) for small business and personal websites. SkyBlueCanvas was designed specifically for those projects where more robust systems like Joomla are too much horsepower.
+</p>
+<p>
+"I initially developed SkyBlueCanvas as for use on my own projects where I found Joomla to be more feature-rich and complex than the projects called for", says Scott Lewis, the developer of SkyBlueCanvas. "I designed the system to be intuitive and easy-to-use for end users, while including features that website developers have come to expect including skinnability, extensibility and a familiar plugin API".
+</p>
+<p>
+SkyBlue Canvas runs on the Apache web server and is written in PHP4. The system requires no configuration or special modules. You simply unarchive the package in your website directory and start creating your content. A full feature list and demo are available at http://www.skybluecanvas.com
+</p>
+<p>
+The system is licensed under the GNU/GPL v3.0 License. A service package for business owners including site setup and design is also available from the Developer.
+</p>
+<p>
+Scott Lewis is a web site designer and web-based applications developer in Richmond, Virginia. Scott has 10 years of experience designing and building web sites and web-based applications for small business and corporations and is formerly a member of the core development team for the Wymeditor WYSIWYM Semantic HTML editor.
+</p>
+<p>
+###<br />
+Scott Lewis<br />
+804.274.0683
+</p>

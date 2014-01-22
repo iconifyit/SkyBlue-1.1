@@ -1,0 +1,15 @@
+Installation Instructions
+
+1. Copy the file named plugin.fragments.php to /skyblue_root/data/plugins/ - replacing any existing copy.
+2. Copy the file named jquery-1.2.6.min.js to /skyblue_root/data/skins/your_skin/js/
+3. Copy the file named jquery.lightbox-0.4.js to /skyblue_root/data/skins/your_skin/js/
+4. Copy the file named jquery.lightbox-0.4.css to /skyblue_root/data/skins/your_skin/css/
+5. Copy the directory named imgs-lightbox to /skyblue_root/data/skins/your_skin/images/
+6. Copy the directory named 'portfolio' (in the fragments directory) to /skyblue_root/data/skins/your_skin/fragments/
+7. Log into your SkyBlueCanvas admin and go to Admin > Pages
+8. Create a new page and add the following token to the page text:
+
+{plugin:fragment(portfolio, lightbox)}
+
+9. Finish the page creation steps as you normally would and save your page.
+10. Go to the front end of your site and view your new gallery page.

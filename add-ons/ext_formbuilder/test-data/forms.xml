@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<obj type="forms">
+<item id="2"
+      objtype="forms"
+      title="FormBuilder Test"
+      showtitle="1"
+      blurb="VGhpcytpcythK0Zvcm1CdWlsZGVyK3Rlc3Qu"
+      contact="scott@skybluecanvas.com"
+      autoresponse="VGhpcytpcythbitBdXRvUmVzcG9uZGVyK3Rlc3QuK1lvdStjYW4rYmluZCtzdWJtaXR0ZWQrdmFsdWVzK2Zyb20rdGhlK2Zvcm0rZmllbGRzK2J5K3VzaW5nK3NwZWNpYWwrdG9rZW5zK2xpa2UrJTdCK2ZpZWxkX25hbWUrJTdELitFeGFtcGxlJTNBKyU3QmVtYWlsJTdEK29yK015VmFycyslMjhwbHVnaW4rcmVxdWlyZWQlMjkrc3VjaCthcyslNUIlNUIrc2JjKy4rdXJsKyU1RCU1RCslNUIlNUJzYmMudXJsJTVEJTVEK29yK1NpdGVWYXJzK3N1Y2grYXMrJTVCJTVCK3NpdGUrLitjb250YWN0X25hbWUrJTVEJTVEKyU1QiU1QnNpdGUuY29udGFjdF9uYW1lJTVEJTVE"
+      callback_event="callback_form_id_2"
+      cssid="form_id_2">
+</item>
+	</obj>
+</root>
